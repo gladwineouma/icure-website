@@ -17,8 +17,8 @@ const cards = [
   },
   {
     icon: Building2,
-    label: "About Us",
-    title: "Who We Are",
+    label: "ABOUT US",
+    title: "What We Do",
     body: "iCure Mentorship and Empowerment Training Centre delivers world-class phone and laptop repair training. Our hands-on curriculum transforms beginners into pro technicians while sharpening skills for experienced pros. We blend technical mastery with business mentorship to launch empowered entrepreneurs who thrive in the booming electronics repair industry.",
   },
 ];
@@ -131,7 +131,7 @@ const AboutSection = () => {
                   backgroundColor: "#000",
                   borderRadius: "4px",
                   borderTop: `5px solid ${PRIMARY_COLOR}`,
-                //   border: isHovered ? `1px solid ${PRIMARY_COLOR}` : "none",
+                  border: isHovered ? `1px solid ${PRIMARY_COLOR}` : "none",
                   padding: screenSize === "sm" ? "28px 24px" : "36px 28px",
                   display: "flex",
                   flexDirection: "column",
@@ -157,7 +157,8 @@ const AboutSection = () => {
                 >
                   <card.icon 
                     size={26} 
-                    color="#ffffff" 
+                    color= {PRIMARY_COLOR}
+
                     strokeWidth={1.5}
                   />
                 </div>
@@ -166,7 +167,7 @@ const AboutSection = () => {
                 <span
                   style={{
                     fontSize: "13px",
-                    fontWeight: "600",
+                    fontWeight: "500",
                     letterSpacing: "0.05em",
                     color: PRIMARY_COLOR,
                     marginBottom: "12px",
@@ -180,7 +181,7 @@ const AboutSection = () => {
                 <h3
                   style={{
                     fontSize: screenSize === "sm" ? "18px" : "20px",
-                    fontWeight: "600",
+                    fontWeight: "450",
                     color: "#fff",
                     marginBottom: "16px",
                     lineHeight: "1.3",
