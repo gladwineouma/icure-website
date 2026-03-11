@@ -1,6 +1,5 @@
 import { Eye, Target, Building2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 
 const cards = [
   {
@@ -23,99 +22,39 @@ const cards = [
   },
 ];
 
-const PRIMARY_COLOR = "#E91F31";
-
-const AboutSection = () => {
-  const [screenSize, setScreenSize] = useState("lg");
-  const [hoveredCard, setHoveredCard] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) setScreenSize("sm");
-      else if (window.innerWidth < 1024) setScreenSize("md");
-      else setScreenSize("lg");
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+export default function AboutSection() {
   return (
-    <section
-      id="about"
-      style={{
-        position: "relative",
-        padding: screenSize === "sm" ? "60px 20px" : screenSize === "md" ? "80px 40px" : "100px 60px",
-        overflow: "hidden",
-        backgroundColor: "#0a0a0a",
-      }}
-    >
-      {/* Background overlay with image */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
-          zIndex: 0,
-        }}
-      />
+    <section id="about" className="relative py-20 px-6 bg-black overflow-hidden">
 
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "1200px", margin: "0 auto" }}>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: "center", marginBottom: "60px" }}
+          className="text-center mb-16"
         >
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            style={{
-              fontSize: screenSize === "sm" ? "32px" : screenSize === "md" ? "40px" : "48px",
-              fontWeight: "500",
-              color: "#fff",
-              margin: 0,
-            }}
-          >
-            About <span style={{ color: PRIMARY_COLOR }}>iCure</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            style={{
-              marginTop: "16px",
-              fontSize: screenSize === "sm" ? "14px" : "16px",
-              color: "rgba(255, 255, 255, 0.9)",
-              maxWidth: "700px",
-              margin: "16px auto 0",
-              lineHeight: "1.6",
-            }}
-          >
-            More than a training centre — we're building the next generation of electronics repair leaders.
-          </motion.p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white">
+            About <span className="text-[#E91F31]">iCure</span>
+          </h2>
+
+          <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            More than a training centre — we're building the next generation
+            of electronics repair leaders.
+          </p>
         </motion.div>
 
-        {/* Cards Grid */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "stretch",
-            gap: screenSize === "sm" ? "20px" : screenSize === "md" ? "24px" : "30px",
-            flexWrap: "wrap",
-            maxWidth: screenSize === "sm" ? "100%" : screenSize === "md" ? "800px" : "1000px",
-            margin: "0 auto",
-          }}
-        >
+        {/* Cards */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+
           {cards.map((card, index) => {
-            const isHovered = hoveredCard === index;
+            const Icon = card.icon;
+
             return (
               <motion.div
                 key={card.label}
@@ -123,85 +62,29 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
-                onHoverStart={() => setHoveredCard(index)}
-                onHoverEnd={() => setHoveredCard(null)}
-                style={{
-                  flex: screenSize === "sm" ? "1 1 100%" : "1 1 300px",
-                  maxWidth: screenSize === "sm" ? "100%" : "350px",
-                  backgroundColor: "#000",
-                  borderRadius: "4px",
-                  borderTop: `5px solid ${PRIMARY_COLOR}`,
-                  border: isHovered ? `1px solid ${PRIMARY_COLOR}` : "none",
-                  padding: screenSize === "sm" ? "28px 24px" : "36px 28px",
-                  display: "flex",
-                  flexDirection: "column",
-                  transition: "all 0.3s ease",
-                  transform: isHovered ? "translateY(-4px)" : "translateY(0)",
-                  boxShadow: isHovered
-                    ? "none"
-                    : `0 8px 25px ${PRIMARY_COLOR}25`,
-                }}
+                className="bg-black border-t-[5px] border-[#E91F31] p-8 rounded hover:border hover:border-[#E91F31] hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-red-500/20"
               >
-             
-                <div
-                  style={{
-                    width: "52px",
-                    height: "52px",
-                    backgroundColor: `${PRIMARY_COLOR}70`,
-                    borderRadius: "8px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "20px",
-                  }}
-                >
-                  <card.icon 
-                    size={26} 
-                    color= {PRIMARY_COLOR}
 
-                    strokeWidth={1.5}
-                  />
+                {/* Icon */}
+                <div className="w-13 h-13 flex items-center justify-center rounded-lg bg-red-500/40 mb-5">
+                  <Icon size={26} className="text-[#E91F31]" strokeWidth={1.5} />
                 </div>
 
                 {/* Label */}
-                <span
-                  style={{
-                    fontSize: "13px",
-                    fontWeight: "500",
-                    letterSpacing: "0.05em",
-                    color: PRIMARY_COLOR,
-                    marginBottom: "12px",
-                    display: "block",
-                  }}
-                >
+                <span className="text-xs tracking-widest text-[#E91F31] font-medium block mb-3">
                   {card.label}
                 </span>
 
                 {/* Title */}
-                <h3
-                  style={{
-                    fontSize: screenSize === "sm" ? "18px" : "20px",
-                    fontWeight: "450",
-                    color: "#fff",
-                    marginBottom: "16px",
-                    lineHeight: "1.3",
-                  }}
-                >
+                <h3 className="text-lg md:text-xl text-white font-medium mb-4 leading-snug">
                   {card.title}
                 </h3>
 
                 {/* Body */}
-                <p
-                  style={{
-                    fontSize: "14px",
-                    lineHeight: "1.7",
-                    color: "rgba(255, 255, 255, 0.8)",
-                    margin: 0,
-                    flex: 1,
-                  }}
-                >
+                <p className="text-sm text-gray-300 leading-relaxed">
                   {card.body}
                 </p>
+
               </motion.div>
             );
           })}
@@ -209,6 +92,4 @@ const AboutSection = () => {
       </div>
     </section>
   );
-};
-
-export default AboutSection;
+}
