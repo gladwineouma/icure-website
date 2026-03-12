@@ -179,8 +179,7 @@ const ContactSection = () => {
         </ScrollReveal>
 
         {/* Contact Cards */}
-        <div className="flex flex-col lg:flex-row gap-8 max-w-5xl mx-auto px-4 lg:px-10">
-
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 lg:px-10 w-full items-start">
           <ContactForm
             onSubmit={handleSubmit}
             isSubmitting={isSubmitting}
