@@ -8,14 +8,14 @@ export default function HeroSection() {
 
       {/* HERO */}
       <div
-        className="relative h-[100vh] flex items-center bg-fixed"
+        className="relative h-screen flex items-center bg-scroll md:bg-fixed"
         style={{
           backgroundImage: "url('/hero-image.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* Softer Black → Red Overlay */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-[#E91F31]/20"></div>
 
         {/* HERO CONTENT */}
@@ -25,7 +25,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative max-w-6xl pl-6 md:pl-16 lg:pl-24 pr-6 text-white"
         >
-          <h1 className="text-3xl mx-2px sm:text-4xl md:text-5xl lg:text-6xl font-[500] leading-tight max-w-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[500] leading-tight max-w-2xl">
             ICure Mentorship and Empowerment Training Centre
           </h1>
 
@@ -34,17 +34,17 @@ export default function HeroSection() {
           </p>
 
           {/* BUTTONS */}
-          <div className="flex flex-col md:flex-row gap-4 mt-6">
+          <div className="flex flex-wrap gap-4 mt-6">
             <a
               href="#courses"
-              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition-colors text-center min-w-[180px]"
+              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition-colors text-center w-[180px]"
             >
               View Courses
             </a>
 
             <a
               href="#contact"
-              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition-colors text-center min-w-[180px]"
+              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition-colors text-center w-[180px]"
             >
               Book a Free Tour
             </a>
@@ -131,7 +131,7 @@ export default function HeroSection() {
               Technical Training Skills
             </h3>
             <p className="text-gray-600 mt-2 leading-relaxed">
-              Gain hands-on skills to trouble shoot and repair any device,
+              Gain hands-on skills to troubleshoot and repair any device,
               from smartphones to laptops.
             </p>
           </div>
@@ -151,7 +151,7 @@ export default function HeroSection() {
               Youth Empowerment Program
             </h3>
             <p className="text-gray-600 mt-2 leading-relaxed">
-              Mentorship and life skills to empower next generation.
+              Mentorship and life skills to empower the next generation.
             </p>
           </div>
         </motion.div>
