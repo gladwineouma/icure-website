@@ -9,7 +9,6 @@ import Navbar from "./components/Navbar"
 import TestimonialsSection from "./components/Testimonials"
 import CoreValues from "./components/Values"
 import WhyChooseUs from "./components/WhyUs"
-import TestTailwind from "./TestTailwind"
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
    <FAQSection/>
    <ContactSection/>
    <Footer/>
-   <TestTailwind/>
+  
 
    </>
   )
