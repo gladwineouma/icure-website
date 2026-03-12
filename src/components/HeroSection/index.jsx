@@ -23,28 +23,28 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative max-w-6xl pl-6 md:pl-16 lg:pl-24 pr-6 text-white"
+          className="relative max-w-xl pl-6 md:pl-16 lg:pl-24 pr-6 text-white"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[500] leading-tight max-w-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[500] leading-tight">
             ICure Mentorship and Empowerment Training Centre
           </h1>
 
-          <p className="mt-4 md:mt-6 text-lg md:text-xl text-gray-200">
+          <p className="mt-5 text-lg md:text-xl text-gray-200 max-w-md">
             Training Minds, Repairing Future
           </p>
 
           {/* BUTTONS */}
-          <div className="flex flex-wrap gap-4 mt-6">
+          <div className="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
             <a
               href="#courses"
-              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition-colors text-center w-[180px]"
+              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition text-center w-[180px]"
             >
               View Courses
             </a>
 
             <a
               href="#contact"
-              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition-colors text-center w-[180px]"
+              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition text-center w-[180px]"
             >
               Book a Free Tour
             </a>
