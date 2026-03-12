@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Logo + Description */}
           <motion.div {...fadeInUp}>
             <img
-              src="/icureLogo.png"
+              src="/icure-logo.png"
               alt="iCure Logo"
               className="w-44 mb-5"
             />

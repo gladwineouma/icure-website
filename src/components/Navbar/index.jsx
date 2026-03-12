@@ -37,14 +37,14 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 w-full bg-white z-50 shadow-sm">
-            <div className="w-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-between">
+            <div className="w-full md:px-8 py-4 md:py-5 flex items-center justify-between">
 
                 {/* Logo */}
                 <div className="flex items-start gap-2 cursor-pointer">
                     <img
-                        src="/icureLogo.png"
+                        src="/icure-logo.png"
                         alt="ICure Logo"
-                        className="h-8 w-8 md:h-9 md:w-9 mt-[2px]"
+                        className="h-12 w-12 md:h-12 md:w-12]"
                     />
 
                     <div className="leading-tight">
@@ -52,7 +52,7 @@ export default function Navbar() {
                             iCure
                         </span>
                         <br />
-                        <span className="text-gray-600 text-[11px] md:text-[12px]">
+                        <span className="text-gray-600 text-[12px] md:text-[13px]">
                             Mentorship & Empowerment Training Centre
                         </span>
                     </div>

@@ -43,8 +43,8 @@ function ValueCard({ value, isHovered, onHoverStart, onHoverEnd }) {
       className={`relative rounded-xl border p-6 text-center transition-all duration-500 cursor-pointer
       ${
         isHovered
-          ? "border-red-500 shadow-xl -translate-y-1"
-          : "border-red-500/60 shadow-sm"
+          ? "border-[#E91F31] shadow-xl -translate-y-1"
+          : "border-[#E91F31]/60 shadow-sm"
       }`}
     >
       {/* Icon */}
@@ -52,8 +52,8 @@ function ValueCard({ value, isHovered, onHoverStart, onHoverEnd }) {
         className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg transition-all
         ${
           isHovered
-            ? "bg-red-500 text-white"
-            : "bg-red-100 text-red-500"
+            ? "bg-[#E91F31] text-white"
+            : "bg-red-100 text-[#E91F31]"
         }`}
       >
         <Icon size={28} strokeWidth={1.5} />
@@ -62,14 +62,14 @@ function ValueCard({ value, isHovered, onHoverStart, onHoverEnd }) {
       {/* Title */}
       <h3
         className={`font-bold text-lg mb-2 transition-colors
-        ${isHovered ? "text-red-500" : "text-black"}`}
+        ${isHovered ? "text-[#E91F31]" : "text-black"}`}
       >
         {value.title}
       </h3>
 
       {/* Divider */}
       <div
-        className={`h-[3px] bg-red-500 mx-auto mb-3 transition-all
+        className={`h-[3px] bg-[#E91F31] mx-auto mb-3 transition-all
         ${isHovered ? "w-12" : "w-8"}`}
       />
 
@@ -80,7 +80,7 @@ function ValueCard({ value, isHovered, onHoverStart, onHoverEnd }) {
 
       {/* Bottom Accent */}
       <div
-        className={`absolute bottom-0 left-0 h-1 bg-red-500 transition-all
+        className={`absolute bottom-0 left-0 h-1 bg-[#E91F31] transition-all
         ${isHovered ? "w-full" : "w-0"}`}
       />
     </motion.div>
@@ -116,7 +116,7 @@ export default function CoreValuesSection() {
 
         <ScrollReveal>
           <h2 className="text-center text-3xl md:text-5xl font-medium mb-12">
-            Our Core <span className="text-red-500">Values</span>
+            Our Core <span className="text-[#E91F31]">Values</span>
           </h2>
         </ScrollReveal>
 
@@ -142,7 +142,7 @@ export default function CoreValuesSection() {
               className={`h-2.5 w-2.5 rounded-full transition-all
               ${
                 currentIndex === index
-                  ? "bg-red-500 scale-110"
+                  ? "bg-[#E91F31] scale-110"
                   : "bg-gray-300"
               }`}
             />

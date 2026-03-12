@@ -30,7 +30,7 @@ const testimonials = [
         name: "Linda Achieng",
         role: "Repair Business Owner",
         course: "Master Technician Program",
-        text: "The Master Program gave me everything — from advanced repairs to business skills — to launch my own repair centre.",
+        text: "The Master Program gave me everything from advanced repairs to business skills to launch my own repair centre.",
         rating: 5,
         initials: "LA",
     },
@@ -43,8 +43,8 @@ export default function TestimonialsSection() {
             className="relative py-24 bg-gray-50 overflow-hidden"
         >
             {/* Background glow */}
-            <div className="absolute top-10 left-10 h-64 w-64 rounded-full bg-red-500/5 blur-3xl" />
-            <div className="absolute bottom-10 right-10 h-48 w-48 rounded-full bg-red-500/5 blur-3xl" />
+            <div className="absolute top-10 left-10 h-64 w-64 rounded-full bg-[#E91F31]/5 blur-3xl" />
+            <div className="absolute bottom-10 right-10 h-48 w-48 rounded-full bg-[#E91F31]/5 blur-3xl" />
 
             <div className="max-w-6xl mx-auto px-6 relative">
 
@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
                 >
 
                     <h2 className="text-4xl font-medium md:text-5xl">
-                        What Our <span className="text-red-500">Graduates</span> Say
+                        What Our <span className="text-[#E91F31]">Graduates</span> Say
                     </h2>
 
                     <p className="mx-auto mt-4 max-w-lg text-gray-600">
@@ -81,20 +81,20 @@ export default function TestimonialsSection() {
                         >
 
                             {/* Quote Icon */}
-                            <Quote className="absolute top-4 right-4 h-8 w-8 text-red-500/10 group-hover:text-red-500/20 transition-colors" />
+                            <Quote className="absolute top-4 right-4 h-8 w-8 text-[#E91F31]/10 group-hover:text-[#E91F31]/20 transition-colors" />
 
                             {/* Stars */}
                             <div className="flex gap-0.5 mb-3">
                                 {Array.from({ length: t.rating }).map((_, i) => (
                                     <Star
                                         key={i}
-                                        className="h-4 w-4 fill-red-500 text-red-500"
+                                        className="h-4 w-4 fill-[#E91F31] text-[#E91F31]"
                                     />
                                 ))}
                             </div>
 
                             {/* Course */}
-                            <span className="inline-block rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 mb-3">
+                            <span className="inline-block rounded-full bg-[#E91F31]/10 px-3 py-1 text-xs font-medium text-[#E91F31] mb-3">
                                 {t.course}
                             </span>
 
@@ -106,12 +106,12 @@ export default function TestimonialsSection() {
                             {/* User */}
                             <div className="mt-5 border-t border-gray-200 pt-4 flex items-center gap-3">
 
-                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500 text-white text-sm font-bold">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E91F31] text-white text-sm font-medium">
                                     {t.initials}
                                 </div>
 
                                 <div>
-                                    <p className="text-sm font-semibold">{t.name}</p>
+                                    <p className="text-sm font-medium">{t.name}</p>
                                     <p className="text-xs text-gray-500">{t.role}</p>
                                 </div>
 

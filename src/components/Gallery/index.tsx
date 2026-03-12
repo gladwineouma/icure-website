@@ -29,7 +29,7 @@ export default function GallerySection() {
                     
 
                     <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
-                        Impact <span className="text-red-500">Gallery</span>
+                        Impact <span className="text-[#E91F31]">Gallery</span>
                     </h1>
 
                     <p className="mt-3 text-gray-600 max-w-xl mx-auto">
@@ -60,7 +60,7 @@ export default function GallerySection() {
                             />
 
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span className="text-sm font-semibold text-white">
+                                <span className="text-lg font-medium text-white">
                                     {img.caption}
                                 </span>
                             </div>

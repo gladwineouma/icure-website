@@ -82,7 +82,7 @@ function LevelCard({ level }) {
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
 
         <div className="absolute bottom-3 left-4 flex items-center gap-2">
-          <span className="rounded-full bg-red-500 px-3 py-1 text-xs font-medium text-white">
+          <span className="rounded-full bg-[#E91F31] px-3 py-1 text-xs font-medium text-white">
             {level.level}
           </span>
 
@@ -112,7 +112,7 @@ function LevelCard({ level }) {
 
         <button
           onClick={() => setExpanded(!expanded)}
-          className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-red-500 hover:text-red-400 transition"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#E91F31] hover:text-red-400 transition"
         >
           {expanded ? "Read Less" : "Read More"}
 
@@ -141,7 +141,7 @@ export default function CourseLevelsSection() {
           className="mb-16 text-center"
         >
           <h2 className="text-4xl font-medium md:text-5xl">
-            Our <span className="text-red-500">Core Programs</span>
+            Our <span className="text-[#E91F31]">Core Programs</span>
           </h2>
 
           <p className="mx-auto mt-4 max-w-lg text-gray-600">
@@ -163,7 +163,7 @@ export default function CourseLevelsSection() {
             >
               {/* Course Header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-red-500 text-white">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#E91F31]/10 text-white">
                   {course.icon}
                 </div>
 
