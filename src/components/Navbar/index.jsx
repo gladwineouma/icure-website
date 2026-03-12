@@ -37,7 +37,7 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 w-full bg-white z-50 shadow-sm">
-            <div className="w-full md:px-8 py-4 md:py-5 flex items-center justify-between">
+            <div className="w-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-between">
 
                 {/* Logo */}
                 <div className="flex items-start gap-2 cursor-pointer">
@@ -47,7 +47,7 @@ export default function Navbar() {
                         className="h-12 w-12 md:h-12 md:w-12]"
                     />
 
-                    <div className="leading-tight">
+                    <div className="leading-tight mt-4px">
                         <span className="text-[#E91F31] font-semibold text-[17px] md:text-[18px] tracking-tight">
                             iCure
                         </span>
@@ -59,7 +59,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <ul className="hidden md:flex items-center gap-12 text-[15px] font-medium">
+                <ul className="hidden md:flex items-center gap-8 text-[15px] font-medium">
 
                     <li className={linkClass("home")}>
                         <a href="#home">Home</a>
