@@ -8,7 +8,7 @@ export default function HeroSection() {
 
       {/* HERO */}
       <div
-        className="relative h-screen flex items-center bg-scroll md:bg-fixed"
+        className="relative min-h-screen flex items-center"
         style={{
           backgroundImage: "url('/hero-image.png')",
           backgroundSize: "cover",
@@ -22,34 +22,39 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="relative max-w-xl pl-6 md:pl-16 lg:pl-24 pr-6 text-white"
+          transition={{ duration: 1 }}
+          className="relative w-full max-w-6xl mx-auto px-6 md:px-16 text-white"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[500] leading-tight">
-            ICure Mentorship and Empowerment Training Centre
-          </h1>
+          <div className="max-w-3xl">
 
-          <p className="mt-5 text-lg md:text-xl text-gray-200 max-w-md">
-            Training Minds, Repairing Future
-          </p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+              ICure Mentorship and Empowerment Training Centre
+            </h1>
 
-          {/* BUTTONS */}
-          <div className="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
-            <a
-              href="#courses"
-              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-sm transition text-center w-[180px]"
-            >
-              View Courses
-            </a>
+            <p className="mt-4 text-lg md:text-xl text-gray-200">
+              Training Minds, Repairing Future
+            </p>
 
-            <a
-              href="#contact"
-              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition text-center w-[180px]"
-            >
-              Book a Free Tour
-            </a>
+            {/* BUTTONS */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:items-center">
+
+              <a
+                href="#courses"
+                className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition text-center w-full sm:w-[180px]"
+              >
+                View Courses
+              </a>
+
+              <a
+                href="#contact"
+                className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition text-center w-full sm:w-[180px]"
+              >
+                Book a Free Tour
+              </a>
+
+            </div>
+
           </div>
-
         </motion.div>
       </div>
 
@@ -57,7 +62,6 @@ export default function HeroSection() {
       <div className="max-w-5xl mx-auto px-6 -mt-12 relative z-10">
         <div className="bg-white rounded-lg shadow-xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          {/* STAT 1 */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -66,7 +70,6 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <GraduationCap size={36} className="text-[#E91F31]" />
-
             <div>
               <h3 className="text-2xl md:text-3xl font-bold">
                 <CountUp end={3400} duration={2.5} enableScrollSpy scrollSpyOnce />+
@@ -75,7 +78,6 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* STAT 2 */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -84,7 +86,6 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <GraduationCap size={36} className="text-[#E91F31]" />
-
             <div>
               <h3 className="text-2xl md:text-3xl font-bold">
                 <CountUp end={94} duration={2.5} enableScrollSpy scrollSpyOnce />%
@@ -93,7 +94,6 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* STAT 3 */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -102,7 +102,6 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Hourglass size={36} className="text-[#E91F31]" />
-
             <div>
               <h3 className="text-2xl md:text-3xl font-bold">
                 <CountUp end={120} duration={2.5} enableScrollSpy scrollSpyOnce />+
@@ -117,7 +116,6 @@ export default function HeroSection() {
       {/* FEATURE CARDS */}
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
 
-        {/* CARD 1 */}
         <motion.div
           className="bg-white shadow-md border border-red-200 rounded-lg p-6 flex gap-4 items-start"
           initial={{ opacity: 0, y: 60 }}
@@ -137,7 +135,6 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* CARD 2 */}
         <motion.div
           className="bg-white shadow-md border border-red-200 rounded-lg p-6 flex gap-4 items-start"
           initial={{ opacity: 0, y: 60 }}
