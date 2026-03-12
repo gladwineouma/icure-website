@@ -39,7 +39,7 @@ export default function HeroSection() {
               href="#courses"
               style={{
                 padding: "12px 12px",
-                backgroundColor: "#ef4444",
+                backgroundColor: "#F97316",
                 color: "#ffffff",
                 fontSize: "14px",
                 fontWeight: "500",
