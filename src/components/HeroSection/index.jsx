@@ -16,7 +16,7 @@ export default function HeroSection() {
         }}
       >
         {/* Softer Black → Red Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-red-500/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-[#E91F31]/20"></div>
 
         {/* HERO CONTENT */}
         <motion.div
@@ -34,21 +34,24 @@ export default function HeroSection() {
           </p>
 
           {/* BUTTONS */}
-          <div className="flex flex-col lg:flex-row gap-3 lg:gap-4 mt-6 lg:mt-8 max-w-lg mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3 mt-6 w-full sm:w-auto justify-center">
             <a
               href="#courses"
-              className="bg-red-500 hover:bg-red-600 px-4 lg:px-8 py-2.5 lg:py-3 text-sm lg:text-base font-medium rounded-lg transition w-full lg:w-auto flex items-center justify-center"
+              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition-colors w-full sm:w-auto text-center"
             >
               View Courses
             </a>
 
             <a
               href="#contact"
-              className="bg-white text-red-500 border-2 border-red-500 px-4 lg:px-8 py-2.5 lg:py-3 text-sm lg:text-base font-medium rounded-lg hover:bg-red-50 transition w-full lg:w-auto flex items-center justify-center"
+              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition-colors w-full sm:w-auto text-center"
             >
-              Book a Free tour
+              Book a Free Tour
             </a>
           </div>
+
+
+
 
 
         </motion.div>
@@ -66,7 +69,7 @@ export default function HeroSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <GraduationCap size={36} className="text-red-500" />
+            <GraduationCap size={36} className="text-[#E91F31]" />
 
             <div>
               <h3 className="text-2xl md:text-3xl font-bold">
@@ -84,7 +87,7 @@ export default function HeroSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <GraduationCap size={36} className="text-red-500" />
+            <GraduationCap size={36} className="text-[#E91F31]" />
 
             <div>
               <h3 className="text-2xl md:text-3xl font-bold">
@@ -102,7 +105,7 @@ export default function HeroSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Hourglass size={36} className="text-red-500" />
+            <Hourglass size={36} className="text-[#E91F31]" />
 
             <div>
               <h3 className="text-2xl md:text-3xl font-bold">
