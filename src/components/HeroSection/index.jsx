@@ -34,18 +34,17 @@ export default function HeroSection() {
           </p>
 
           {/* BUTTONS */}
-          {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row gap-3 mt-6 items-start">
             <a
               href="#courses"
-              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition-colors inline-block"
+              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition-colors flex items-center justify-center min-w-[160px]"
             >
               View Courses
             </a>
 
             <a
               href="#contact"
-              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition-colors inline-block"
+              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition-colors flex items-center justify-center min-w-[160px]"
             >
               Book a Free Tour
             </a>
