@@ -8,7 +8,7 @@ export default function HeroSection() {
 
       {/* HERO */}
       <div
-        className="relative h-[90vh] flex items-center bg-fixed"
+        className="relative h-[100vh] flex items-center bg-fixed"
         style={{
           backgroundImage: "url('/hero-image.png')",
           backgroundSize: "cover",
