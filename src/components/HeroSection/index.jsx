@@ -37,7 +37,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
             <a
               href="#courses"
-              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition text-center w-[180px]"
+              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-sm transition text-center w-[180px]"
             >
               View Courses
             </a>
