@@ -18,7 +18,7 @@ export const ContactDetails = () => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="bg-white rounded-2xl p-6 md:p-10 shadow-xl w-full lg:w-1/2 flex flex-col"
+        className="bg-white rounded-2xl p-6 md:p-10 shadow-xl w-full flex flex-col"
       >
         <div className="flex-1 flex flex-col">
           {/* Title */}

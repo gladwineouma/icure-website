@@ -31,7 +31,7 @@ const ContactForm = ({ onSubmit, isSubmitting }) => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-       className="bg-white rounded-2xl p-6 md:p-10 shadow-xl w-full lg:w-1/2"
+        className="bg-white rounded-2xl p-6 md:p-10 shadow-xl w-full"
       >
         <h3 className="text-xl md:text-2xl font-medium text-black mb-7">
           Send us a message

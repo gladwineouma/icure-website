@@ -29,7 +29,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative py-24 px-5 overflow-hidden bg-black"
+      className="relative py-24 px-5 overflow-hidden bg-black min-h-screen"
     >
 
       {/* Background Image */}
