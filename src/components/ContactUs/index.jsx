@@ -31,7 +31,6 @@ const ContactSection = () => {
       id="contact"
       className="relative py-24 px-5 overflow-hidden bg-black min-h-screen"
     >
-
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -61,7 +60,6 @@ const ContactSection = () => {
               onClick={(e) => e.stopPropagation()}
               className="relative bg-white rounded-2xl p-10 max-w-md w-full text-center shadow-2xl"
             >
-
               {/* Close */}
               <motion.button
                 onClick={closeSuccessCard}
@@ -142,18 +140,15 @@ const ContactSection = () => {
               >
                 Got it, thanks!
               </motion.button>
-
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <div className="relative z-10 max-w-6xl mx-auto">
-
         {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -174,21 +169,20 @@ const ContactSection = () => {
               Ready to start your repair career? Send us a message or visit our
               centre for a free tour.
             </motion.p>
-
           </div>
         </ScrollReveal>
 
-        {/* Contact Cards */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 lg:px-10 w-full items-start">
-          <ContactForm
-            onSubmit={handleSubmit}
-            isSubmitting={isSubmitting}
-          />
-
-          <ContactDetails />
-
+        {/* 🚨 BULLETPROOF CARDS CONTAINER - VERCEL SAFE */}
+        <div className="w-full max-w-6xl mx-auto px-4 lg:px-12">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-stretch h-[700px] lg:h-[800px]">
+            <div className="flex-1 min-h-[600px] lg:min-h-[700px]">
+              <ContactForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />
+            </div>
+            <div className="flex-1 min-h-[600px] lg:min-h-[700px]">
+              <ContactDetails />
+            </div>
+          </div>
         </div>
-
       </div>
     </section>
   );
