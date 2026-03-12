@@ -172,15 +172,11 @@ const ContactSection = () => {
           </div>
         </ScrollReveal>
 
-        {/* 🚨 BULLETPROOF CARDS CONTAINER - VERCEL SAFE */}
+        {/* 🚨 NO OVERLAP - PURE CSS GRID */}
         <div className="w-full max-w-6xl mx-auto px-4 lg:px-12">
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-stretch h-[700px] lg:h-[800px]">
-            <div className="flex-1 min-h-[600px] lg:min-h-[700px]">
-              <ContactForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />
-            </div>
-            <div className="flex-1 min-h-[600px] lg:min-h-[700px]">
-              <ContactDetails />
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <ContactForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />
+            <ContactDetails />
           </div>
         </div>
       </div>
