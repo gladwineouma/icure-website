@@ -25,7 +25,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative max-w-6xl pl-6 md:pl-16 lg:pl-24 pr-6 text-white"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[500] leading-tight max-w-2xl">
+          <h1 className="text-3xl mx-2px sm:text-4xl md:text-5xl lg:text-6xl font-[500] leading-tight max-w-2xl">
             ICure Mentorship and Empowerment Training Centre
           </h1>
 
