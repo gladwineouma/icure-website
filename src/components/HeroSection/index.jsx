@@ -37,14 +37,37 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-3 mt-6 w-full sm:w-auto justify-center">
             <a
               href="#courses"
-              className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition-colors w-full sm:w-auto text-center"
+              style={{
+                padding: "12px 12px",
+                backgroundColor: "#ef4444",
+                color: "#ffffff",
+                fontSize: "14px",
+                fontWeight: "500",
+                borderRadius: "6px",
+                textAlign: "center",
+                textDecoration: "none",
+                display: "inline-block",
+                minWidth: "200px"
+              }}
             >
               View Courses
             </a>
 
             <a
               href="#contact"
-              className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition-colors w-full sm:w-auto text-center"
+              style={{
+                padding: "12px 12px",
+                backgroundColor: "#ffffff",
+                color: "#ef4444",
+                border: "1px solid #ef4444",
+                fontSize: "14px",
+                fontWeight: "500",
+                borderRadius: "6px",
+                textAlign: "center",
+                textDecoration: "none",
+                display: "inline-block",
+                minWidth: "200px"
+              }}
             >
               Book a Free Tour
             </a>
