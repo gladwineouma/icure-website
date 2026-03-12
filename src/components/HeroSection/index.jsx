@@ -38,16 +38,15 @@ export default function HeroSection() {
             <a
               href="#courses"
               style={{
-                padding: "12px 12px",
+                padding: "12px 24px",
                 backgroundColor: "#ef4444",
-                color: "#ffffff",
-                fontSize: "14px",
-                fontWeight: "500",
+                color: "#fff",
                 borderRadius: "6px",
+                fontSize: "14px",
+                fontWeight: 500,
+                minWidth: "180px",
                 textAlign: "center",
-                textDecoration: "none",
-                display: "inline-block",
-                minWidth: "200px"
+                display: "inline-block"
               }}
             >
               View Courses
@@ -56,17 +55,16 @@ export default function HeroSection() {
             <a
               href="#contact"
               style={{
-                padding: "12px 12px",
-                backgroundColor: "#ffffff",
-                color: "#ef4444",
+                padding: "12px 24px",
                 border: "1px solid #ef4444",
-                fontSize: "14px",
-                fontWeight: "500",
+                backgroundColor: "#fff",
+                color: "#ef4444",
                 borderRadius: "6px",
+                fontSize: "14px",
+                fontWeight: 500,
+                minWidth: "180px",
                 textAlign: "center",
-                textDecoration: "none",
-                display: "inline-block",
-                minWidth: "200px"
+                display: "inline-block"
               }}
             >
               Book a Free Tour
