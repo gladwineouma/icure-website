@@ -29,12 +29,12 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      {/* MAIN CONTENT */}
+      <div className="max-w-6xl mx-auto px-4 py-12">
 
-        {/* Grid */}
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 mb-12">
+        <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
 
-          {/* Logo + Description */}
+          {/* LOGO + DESCRIPTION */}
           <motion.div {...fadeInUp}>
             <img
               src="/icure-logo.png"
@@ -48,7 +48,7 @@ export default function Footer() {
             </p>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* QUICK LINKS */}
           <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
             <h3 className="text-base font-semibold mb-5">Quick Links</h3>
 
@@ -68,7 +68,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Courses */}
+          {/* COURSES */}
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
             <h3 className="text-base font-semibold mb-5">Courses</h3>
 
@@ -88,31 +88,32 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact */}
+          {/* CONTACT */}
           <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
             <h3 className="text-base font-semibold mb-5">Contact Us</h3>
 
             <div className="space-y-4">
 
-              {/* Location */}
+              {/* LOCATION */}
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#E91F31] mt-1" />
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  Kenya Cinema Building, 4th Floor, Aga Khan Walk,
-                  Nairobi CBD
+                  Kenya Cinema Building <br/>
+                  4th Floor, Aga Khan Walk <br/>
+                  Nairobi CBD, Kenya
                 </p>
               </div>
 
-              {/* Phone */}
+              {/* PHONE */}
               <div className="flex items-start gap-3">
                 <Phone size={16} className="text-[#E91F31] mt-1" />
                 <div className="text-sm text-gray-400 space-y-1">
-                  <p>+254725128058</p>
-                  <p>+254723319814</p>
+                  <p>+254 725 128058</p>
+                  <p>+254 723 319814</p>
                 </div>
               </div>
 
-              {/* Email */}
+              {/* EMAIL */}
               <div className="flex items-start gap-3">
                 <Mail size={16} className="text-[#E91F31] mt-1" />
                 <a
@@ -128,23 +129,24 @@ export default function Footer() {
 
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-[#E91F31] opacity-50 mb-8"></div>
-
-        {/* Copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-center"
-        >
-          <p className="text-sm text-gray-500">
-            © {currentYear} iCURE Mentorship and Empowerment Training Centre.
-          </p>
-        </motion.div>
-
       </div>
+
+      {/* FULL WIDTH DIVIDER */}
+      <div className="w-full h-px bg-[#E91F31] opacity-50"></div>
+
+      {/* COPYRIGHT */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4 }}
+        className="text-center py-6"
+      >
+        <p className="text-sm text-gray-500">
+          © {currentYear} iCURE Mentorship and Empowerment Training Centre.
+        </p>
+      </motion.div>
+
     </footer>
   );
 }
