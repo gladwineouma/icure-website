@@ -26,12 +26,10 @@ export default function AboutSection() {
   return (
     <section id="about" className="relative py-20 px-6 bg-black overflow-hidden">
 
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +47,6 @@ export default function AboutSection() {
           </p>
         </motion.div>
 
-        {/* Cards */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
 
           {cards.map((card, index) => {
@@ -65,7 +62,6 @@ export default function AboutSection() {
                 className="bg-black border-t-[5px] border-[#E91F31] p-8 rounded hover:border hover:border-[#E91F31] hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-red-500/20"
               >
 
-                {/* Icon */}
                 <div className="w-13 h-13 flex items-center justify-center rounded-lg bg-red-500/40 mb-5">
                   <Icon size={26} className="text-[#E91F31]" strokeWidth={1.5} />
                 </div>
