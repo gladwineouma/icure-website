@@ -43,8 +43,7 @@ export const ContactDetails = () => {
                     className="hover:text-[#E91F31] hover:underline transition-all duration-200"
                   >
                     Kenya Cinema Building, 4th Floor<br />
-                    Aga Khan Walk, Nairobi CBD<br />
-                    Nairobi, Kenya
+                    Nairobi CBD Nairobi, Kenya
                   </a>
                 </p>
 
