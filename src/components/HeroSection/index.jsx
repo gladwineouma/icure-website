@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div
         className="relative min-h-screen flex items-center"
         style={{
-          backgroundImage: "url('/hero-image.png')",
+          backgroundImage: "url('/heroImage.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
