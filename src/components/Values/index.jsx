@@ -31,8 +31,6 @@ const values = [
   },
 ];
 
-const PRIMARY = "#E91F31";
-
 function ValueCard({ value, isHovered, onHoverStart, onHoverEnd }) {
   const Icon = value.icon;
 

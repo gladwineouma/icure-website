@@ -101,9 +101,8 @@ function LevelCard({ level }) {
         </p>
 
         <div
-          className={`transition-all duration-300 ease-in-out ${
-            expanded ? "max-h-40 opacity-100 mt-2" : "max-h-0 opacity-0"
-          } overflow-hidden`}
+          className={`transition-all duration-300 ease-in-out ${expanded ? "max-h-40 opacity-100 mt-2" : "max-h-0 opacity-0"
+            } overflow-hidden`}
         >
           <p className="text-sm leading-relaxed text-gray-600">
             {level.fullDescription}
@@ -163,9 +162,12 @@ export default function CourseLevelsSection() {
             >
               {/* Course Header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#E91F31]/10 text-white">
-                  {course.icon}
+                <div className="w-11 h-11 flex items-center justify-center rounded-full border border-red-500/30 bg-red-500/10 flex-shrink-0">
+                  <span className="text-[#E91F31]">
+                    {course.icon}
+                  </span>
                 </div>
+
 
                 <h3 className="text-xl font-medium">{course.name}</h3>
               </div>
