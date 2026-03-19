@@ -1,11 +1,10 @@
-import { GraduationCap, Hourglass, Wrench, Hand } from "lucide-react";
+import { GraduationCap, Briefcase, Hourglass, Wrench, Hand } from "lucide-react";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
     <section id="home" className="relative w-full">
-
       {/* HERO */}
       <div
         className="relative min-h-screen flex items-center"
@@ -26,9 +25,8 @@ export default function HeroSection() {
           className="relative w-full max-w-6xl mx-auto px-6 md:px-16 text-white"
         >
           <div className="max-w-3xl">
-
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
-              ICure Mentorship and Empowerment Training Centre
+              iCure Mentorship and Empowerment Training Centre
             </h1>
 
             <p className="mt-4 text-lg md:text-xl text-gray-200">
@@ -37,7 +35,6 @@ export default function HeroSection() {
 
             {/* BUTTONS */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:items-center">
-
               <a
                 href="#courses"
                 className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition text-center w-full sm:w-[180px]"
@@ -46,14 +43,13 @@ export default function HeroSection() {
               </a>
 
               <a
-                href="#contact"
+                href="/about#donate"
                 className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition text-center w-full sm:w-[180px]"
               >
-                Book a Free Tour
+                Make a Donation
               </a>
 
             </div>
-
           </div>
         </motion.div>
       </div>
@@ -62,6 +58,7 @@ export default function HeroSection() {
       <div className="max-w-5xl mx-auto px-6 -mt-12 relative z-10">
         <div className="bg-white rounded-lg shadow-xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
 
+          {/* Graduates Empowered */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -78,6 +75,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
+          {/* Job Placement */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -85,7 +83,7 @@ export default function HeroSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <GraduationCap size={36} className="text-[#E91F31]" />
+            <Briefcase size={36} className="text-[#E91F31]" strokeWidth={2.5} />
             <div>
               <h3 className="text-2xl md:text-3xl font-semibold">
                 <CountUp end={94} duration={2.5} enableScrollSpy scrollSpyOnce />%
@@ -94,6 +92,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
+          {/* Practical Hours */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -109,13 +108,11 @@ export default function HeroSection() {
               <p className="text-gray-600">Practical Hours</p>
             </div>
           </motion.div>
-
         </div>
       </div>
 
       {/* FEATURE CARDS */}
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
-
         <motion.div
           className="bg-white shadow-md border border-red-200 rounded-lg p-6 flex gap-4 items-start"
           initial={{ opacity: 0, y: 60 }}
@@ -123,7 +120,7 @@ export default function HeroSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <Wrench size={32} className="text-black" />
+          <Wrench size={48} className="text-black flex-shrink-0 mt-1" />
           <div>
             <h3 className="font-semibold text-lg">
               Technical Training Skills
@@ -142,7 +139,7 @@ export default function HeroSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Hand size={32} className="text-black" />
+          <Hand size={48} className="text-black flex-shrink-0 mt-1" />
           <div>
             <h3 className="font-semibold text-lg">
               Youth Empowerment Program
@@ -152,9 +149,7 @@ export default function HeroSection() {
             </p>
           </div>
         </motion.div>
-
       </div>
-
     </section>
   );
 }

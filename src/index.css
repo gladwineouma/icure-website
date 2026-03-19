@@ -2,8 +2,10 @@
 @import "tailwindcss";
 
 html {
-  scroll-behavior: smooth;
+  /* DISABLE smooth scrolling - normal instant scroll */
+  scroll-behavior: auto;
 }
+
 body {
   font-family: "Poppins", sans-serif;
 }
