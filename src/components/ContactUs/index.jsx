@@ -29,9 +29,9 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative py-24 px-5 overflow-hidden bg-black min-h-screen"
+      className="relative py-24 px-5 overflow-hidden min-h-screen"
     >
-      {/* Background Image */}
+      {/* 🔥 Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -39,7 +39,14 @@ const ContactSection = () => {
             "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80')",
         }}
       >
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* ✅ Dark overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* ✅ Glass blur layer */}
+        <div className="absolute inset-0 backdrop-blur-md"></div>
+
+        {/* ✅ Gradient depth (this makes it look premium) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
       </div>
 
       {/* Success Modal */}
@@ -60,7 +67,6 @@ const ContactSection = () => {
               onClick={(e) => e.stopPropagation()}
               className="relative bg-white rounded-2xl p-10 max-w-md w-full text-center shadow-2xl"
             >
-              {/* Close */}
               <motion.button
                 onClick={closeSuccessCard}
                 whileHover={{ scale: 1.1, rotate: 90 }}
@@ -70,7 +76,6 @@ const ContactSection = () => {
                 <X size={16} className="text-gray-600" />
               </motion.button>
 
-              {/* Icon */}
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -86,7 +91,6 @@ const ContactSection = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Title */}
               <motion.h3
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -96,7 +100,6 @@ const ContactSection = () => {
                 Message Sent!
               </motion.h3>
 
-              {/* Text */}
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -107,7 +110,6 @@ const ContactSection = () => {
                 get back to you within 24 hours.
               </motion.p>
 
-              {/* Progress bar */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -131,7 +133,6 @@ const ContactSection = () => {
                 Closing in 5 seconds...
               </motion.p>
 
-              {/* Button */}
               <motion.button
                 onClick={closeSuccessCard}
                 whileHover={{ scale: 1.02 }}
@@ -146,7 +147,6 @@ const ContactSection = () => {
       </AnimatePresence>
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
             <motion.h2
@@ -172,7 +172,6 @@ const ContactSection = () => {
           </div>
         </ScrollReveal>
 
-        {/* 🚨 NO OVERLAP - PURE CSS GRID */}
         <div className="w-full max-w-6xl mx-auto px-4 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <ContactForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />
@@ -183,7 +182,5 @@ const ContactSection = () => {
     </section>
   );
 };
-// service id: service_u0g8t9o
-// template_e0iewzg
-//pubic key: 0Ah3KbIg5QGnKp-7H
+
 export default ContactSection;

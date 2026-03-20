@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -29,10 +30,9 @@ export default function Navbar() {
     }, []);
 
     const linkClass = (section) =>
-        `relative cursor-pointer transition-colors duration-300 ${
-            active === section
-                ? "text-[#E91F31]"
-                : "text-gray-700 hover:text-[#E91F31]"
+        `relative cursor-pointer transition-colors duration-300 ${active === section
+            ? "text-[#E91F31]"
+            : "text-gray-700 hover:text-[#E91F31]"
         }`;
 
     return (
@@ -62,35 +62,41 @@ export default function Navbar() {
                 <ul className="hidden md:flex items-center gap-8 text-[15px] font-medium">
 
                     <li className={linkClass("home")}>
-                        <a href="#home">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
 
                     <li className={linkClass("about")}>
-                        <a href="#about">About</a>
+                        <Link to="/about">About</Link>
                     </li>
 
-                    <li className={linkClass("why-us")}>
+
+                    {/* <li className={linkClass("why-us")}>
                         <a href="#why-us">Why Us</a>
-                    </li>
+                    </li> */}
 
                     <li className={linkClass("courses")}>
-                        <a href="#courses">Courses</a>
+                        <Link to="/courses">Courses</Link>
                     </li>
 
+
                     <li className={linkClass("gallery")}>
+                        <Link to="/gallery">Gallery</Link>
+                    </li>
+
+                    {/* <li className={linkClass("gallery")}>
                         <a href="#gallery">Gallery</a>
                     </li>
 
                     <li className={linkClass("teatimonials")}>
                         <a href="#testimonials">Testimonials</a>
-                    </li>
+                    </li> */}
 
                     <li className={linkClass("faqs")}>
-                        <a href="#faqs">FAQs</a>
+                        <Link to="/faqs">FAQs</Link>
                     </li>
 
-                    <li className={linkClass("contact")}>
-                        <a href="#contact">Contact</a>
+                    <li className={linkClass("contactus")}>
+                        <Link to="/contactus">Contact Us</Link>
                     </li>
                 </ul>
 

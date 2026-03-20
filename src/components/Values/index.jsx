@@ -31,55 +31,99 @@ const values = [
   },
 ];
 
-function ValueCard({ value, isHovered, onHoverStart, onHoverEnd }) {
+function ValueCard({ value, index, isHovered, onHoverStart, onHoverEnd }) {
   const Icon = value.icon;
+  const isDark = index % 2 !== 0;
 
   return (
     <motion.div
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
-      className={`relative rounded-xl border p-6 text-center transition-all duration-500 cursor-pointer
-      ${
-        isHovered
-          ? "border-[#E91F31] shadow-xl -translate-y-1"
-          : "border-[#E91F31]/60 shadow-sm"
-      }`}
+      whileHover={{ y: -8, scale: 1.03 }}
+      className={`relative rounded-xl border p-6 text-center cursor-pointer overflow-hidden
+      transition-all duration-500
+      ${isDark
+          ? isHovered
+            ? "bg-[#1a1a1a] border-pink-500 shadow-2xl"
+            : "bg-[#1a1a1a] border-gray-800 shadow-md"
+          : isHovered
+            ? "bg-white border-pink-500 shadow-xl"
+            : "bg-white border-gray-200 shadow-md"
+        }`}
     >
+      {/* 🔥 Animated Glow (Dark Cards) */}
+      {isDark && (
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <div className="absolute -top-16 -left-16 w-56 h-56 bg-[#ff2d55]/40 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-56 h-56 bg-pink-400/30 rounded-full blur-3xl" />
+        </motion.div>
+      )}
+
+      {/* Light card soft bg */}
+      {!isDark && (
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white" />
+      )}
+
       {/* Icon */}
       <div
-        className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg transition-all
-        ${
-          isHovered
-            ? "bg-[#E91F31] text-white"
-            : "bg-red-100 text-[#E91F31]"
-        }`}
+        className={`relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-500
+        ${isHovered
+            ? "bg-gradient-to-br from-[#E91F31] to-pink-500 text-white scale-110 shadow-lg shadow-pink-500/50"
+            : isDark
+              ? "bg-pink-500/10 text-pink-400"
+              : "bg-pink-100 text-[#E91F31]"
+          }`}
       >
         <Icon size={28} strokeWidth={1.5} />
       </div>
 
       {/* Title */}
       <h3
-        className={`font-bold text-lg mb-2 transition-colors
-        ${isHovered ? "text-[#E91F31]" : "text-black"}`}
+        className={`relative z-10 font-semibold text-lg mb-2 transition-colors duration-300
+        ${isHovered
+            ? "text-pink-400"
+            : isDark
+              ? "text-white"
+              : "text-gray-900"
+          }`}
       >
         {value.title}
       </h3>
 
       {/* Divider */}
       <div
-        className={`h-[3px] bg-[#E91F31] mx-auto mb-3 transition-all
-        ${isHovered ? "w-12" : "w-8"}`}
+        className={`relative z-10 h-[3px] mx-auto mb-3 transition-all duration-500
+        ${isHovered
+            ? "w-12 bg-gradient-to-r from-[#E91F31] via-pink-400 to-pink-300"
+            : "w-8 bg-gradient-to-r from-[#E91F31] to-pink-300 opacity-70"
+          }`}
       />
 
       {/* Description */}
-      <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
+      <p
+        className={`relative z-10 text-sm leading-relaxed line-clamp-4
+        ${isDark ? "text-gray-300" : "text-gray-600"}`}
+      >
         {value.desc}
       </p>
 
       {/* Bottom Accent */}
       <div
-        className={`absolute bottom-0 left-0 h-1 bg-[#E91F31] transition-all
+        className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#E91F31] via-pink-400 to-transparent transition-all duration-500
         ${isHovered ? "w-full" : "w-0"}`}
+      />
+
+      {/* 🔥 Neon Edge Glow */}
+      <div
+        className={`absolute inset-0 rounded-xl pointer-events-none transition-all duration-500
+        ${isHovered
+            ? "shadow-[0_0_60px_rgba(255,45,85,0.35)]"
+            : "shadow-none"
+          }`}
       />
     </motion.div>
   );
@@ -92,15 +136,14 @@ export default function CoreValuesSection() {
   const cardsToShow = 3;
 
   useEffect(() => {
-  // Pause when user is hovering a card
-  if (hoveredCard !== null) return;
+    if (hoveredCard !== null) return;
 
-  const interval = setInterval(() => {
-    setCurrentIndex((prev) => (prev + 1) % values.length);
-  }, 12000); // slower speed
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % values.length);
+    }, 12000);
 
-  return () => clearInterval(interval);
-}, [hoveredCard]);
+    return () => clearInterval(interval);
+  }, [hoveredCard]);
 
   const visibleCards = [];
   for (let i = 0; i < cardsToShow; i++) {
@@ -108,22 +151,26 @@ export default function CoreValuesSection() {
   }
 
   return (
-    <section className="py-20 bg-gray-100/40">
-
-      <div className="max-w-6xl mx-auto px-6">
-
+    <section className="py-20 bg-gradient-to-br from-white via-pink-50 to-white relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-pink-300/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#ff2d55]/20 rounded-full blur-3xl" />
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <ScrollReveal>
-          <h2 className="text-center text-3xl md:text-5xl font-medium mb-12">
-            Our Core <span className="text-[#E91F31]">Values</span>
-          </h2>
+          <div className="flex justify-center">
+            <h2 className="text-center text-3xl md:text-5xl font-medium mb-12 text-gray-900 max-w-3xl">
+              Our Core <span className="text-[#E91F31]">Values</span>
+            </h2>
+          </div>
         </ScrollReveal>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
           {visibleCards.map((value, index) => (
             <ValueCard
               key={index}
               value={value}
+              index={index}
               isHovered={hoveredCard === index}
               onHoverStart={() => setHoveredCard(index)}
               onHoverEnd={() => setHoveredCard(null)}
@@ -138,11 +185,10 @@ export default function CoreValuesSection() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`h-2.5 w-2.5 rounded-full transition-all
-              ${
-                currentIndex === index
-                  ? "bg-[#E91F31] scale-110"
-                  : "bg-gray-300"
-              }`}
+              ${currentIndex === index
+                  ? "bg-pink-500 scale-110"
+                  : "bg-gray-600"
+                }`}
             />
           ))}
         </div>
