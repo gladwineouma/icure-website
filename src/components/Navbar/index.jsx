@@ -1,12 +1,31 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
+  const location = useLocation();
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Update active based on current route
   useEffect(() => {
+    const pathToSection = {
+      "/": "home",
+      "/about": "about",
+      "/courses": "courses",
+      "/gallery": "gallery",
+      "/faqs": "faqs",
+      "/contactus": "contactus",
+    };
+    
+    const currentSection = pathToSection[location.pathname] || "home";
+    setActive(currentSection);
+  }, [location.pathname]);
+
+  // Optional: Keep scroll-based detection only for home page
+  useEffect(() => {
+    if (location.pathname !== "/") return;
+
     const sections = document.querySelectorAll("section");
 
     const observer = new IntersectionObserver(
@@ -27,14 +46,18 @@ export default function Navbar() {
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
-  }, []);
+  }, [location.pathname]);
 
   const linkClass = (section) =>
-    `relative cursor-pointer transition-colors duration-300 ${
+    `relative cursor-pointer transition-all duration-300 flex items-center ${
       active === section
         ? "text-[#E91F31]"
         : "text-gray-700 hover:text-[#E91F31]"
-    }`;
+    } ${
+      active === section
+        ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-[#E91F31] after:rounded-full"
+        : "after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1 after:bg-[#E91F31] after:rounded-full group-hover:after:w-8 group-hover:after:translate-x-0"
+    } group pb-2`;
 
   return (
     <nav className="fixed top-0 w-full bg-white z-50 shadow-sm">
@@ -88,7 +111,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           to="/contactus"
-          className="hidden md:block bg-[#E91F31] text-white px-5 py-2 rounded-md hover:bg-red-600 transition"
+          className="hidden md:block bg-[#E91F31] text-white px-5 py-2 rounded-md hover:bg-red-700 transition"
         >
           Enroll Now
         </Link>

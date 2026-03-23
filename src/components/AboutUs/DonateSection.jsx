@@ -13,7 +13,7 @@ export default function DonateSection() {
         <div className="absolute top-12 left-8 text-[#E91F31]/10 animate-pulse">
             <Phone className="h-32 w-32 md:h-48 md:w-48" />
         </div>
-        <div className="absolute bottom-12 right-8 text-[#E91F31]/10 animate-pulse" style={{ animationDelay: "1.5s" }}>
+        <div className="absolute bottom-12 right-8 text-[#0F9D58]/40 animate-pulse" style={{ animationDelay: "1.5s" }}>
             <Wrench className="h-24 w-24 md:h-36 md:w-36" />
         </div>
 
@@ -103,15 +103,15 @@ export default function DonateSection() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.15, duration: 0.6 }}
                     whileHover={{ y: -8 }}
-                    className="group relative rounded-2xl border border-[#E91F31]/20 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:border-[#E91F31]/50 hover:bg-white/10 shadow-lg shadow-red-500/20"
+                    className="group relative rounded-2xl border border-[#0F9D58]/20 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:border-[#0F9D58]/50 hover:bg-white/10 shadow-lg shadow-[#0F9D58]/20"
                 >
-                    <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-[#E91F31]/50 transition-all duration-300 group-hover:h-1.5 group-hover:bg-[#E91F31]" />
+                    <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-[#0F9D58]/50 transition-all duration-300 group-hover:h-1.5 group-hover:bg-[#0F9D58]" />
                     <div className="relative">
-                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-[#32CD32] text-white transition-all duration-300 group-hover:bg-[#32CD32]/20 group-hover:text-white group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-red-500/30">
+                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0F9D58] text-white transition-all duration-300 group-hover:bg-[#32CD32]/20 group-hover:text-white group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#0F9D58]">
                             <Recycle className="h-7 w-7" strokeWidth={1.5} />
                         </div>
 
-                        <span className="text-xs font-semibold uppercase tracking-widest text-[#E91F31] block mb-3">
+                        <span className="text-xs font-semibold uppercase tracking-widest text-[#0F9D58] block mb-3">
                             Go Green
                         </span>
 
@@ -139,23 +139,21 @@ export default function DonateSection() {
                         </div>
                     </div>
                 </motion.div>
-
-                {/* Tools & Equipment */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.6 }}
                     whileHover={{ y: -8 }}
-                    className="group relative rounded-2xl border border-[#E91F31]/20 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:border-[#E91F31]/50 hover:bg-white/10 shadow-lg shadow-red-500/20"
+                    className="group relative rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:border-[#FFD700]/50 hover:bg-white/10 shadow-lg shadow-[#FFD700]/20"
                 >
-                    <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-[#E91F31]/50 transition-all duration-300 group-hover:h-1.5 group-hover:bg-[#E91F31]" />
+                    <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-[#FFD700]/50 transition-all duration-300 group-hover:h-1.5 group-hover:bg-[#FFD700]" />
                     <div className="relative">
-                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-[#A8A9AD] text-white transition-all duration-300 group-hover:bg-[#E91F31] group-hover:text-white group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-red-500/30">
+                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FFD700]/30 text-[#FFD700] transition-all duration-300 group-hover:bg-[#FFD700] group-hover:text-white group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#FFD700]">
                             <Wrench className="h-7 w-7" strokeWidth={1.5} />
                         </div>
 
-                        <span className="text-xs font-semibold uppercase tracking-widest text-[#E91F31] block mb-3">
+                        <span className="text-xs font-semibold uppercase tracking-widest text-[#FFD700] block mb-3">
                             Tools & Equipment
                         </span>
 
@@ -175,11 +173,11 @@ export default function DonateSection() {
                                         Devices for diagnostics and repair practice
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <Wrench className="h-4 w-4 text-[#E91F31]" />
+                                        <Wrench className="h-4 w-4 text-[#32CD32]" />
                                         Professional repair tools and toolkits
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <Award className="h-4 w-4 text-[#E91F31]" />
+                                        <Award className="h-4 w-4 text-[#FFD700]" />
                                         Training materials and learning resources
                                     </li>
                                 </ul>

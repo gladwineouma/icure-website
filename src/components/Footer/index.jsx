@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const quickLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
-  { name: "Courses", href: "#courses" },
-  { name: "FAQs", href: "#faqs" },
-  { name: "Contact Us", href: "#contact" },
+  { name: "Home", to: "/" },
+  { name: "About Us", to: "/about" },
+  { name: "Courses", to: "/courses" },
+  { name: "Gallery", to: "/gallery" },
+  { name: "FAQs", to: "/faqs" },
+  { name: "Contact Us", to: "/contactus" },
 ];
 
 const courses = [
-  { name: "Basic Phone Repair", href: "#" },
-  { name: "Advanced Phone Repair", href: "#" },
-  { name: "Basic Laptop Repair", href: "#" },
-  { name: "Advanced Laptop Repair", href: "#" },
+  { name: "Basic Phone Repair", href: "/courses#basic-phone" },
+  { name: "Advanced Phone Repair", href: "/courses#advanced-phone" },
+  { name: "Basic Laptop Repair", href: "/courses#basic-laptop" },
+  { name: "Advanced Laptop Repair", href: "/courses#advanced-laptop" },
 ];
 
 export default function Footer() {
@@ -28,20 +30,28 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white">
-
       {/* MAIN CONTENT */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
-
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-12">
         <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
 
           {/* LOGO + DESCRIPTION */}
           <motion.div {...fadeInUp}>
-            <img
-              src="/icure-logo.png"
-              alt="iCure Logo"
-              className="w-44 mb-5"
-            />
-
+            <div className="flex items-start gap-2 mb-5">
+              <img
+                src="/icure-logo.png"
+                alt="iCure Logo"
+                className="h-12 w-12"
+              />
+              <div className="leading-tight mt-1">
+                <span className="text-[#E91F31] font-semibold text-[17px] md:text-[18px] tracking-tight">
+                  iCure
+                </span>
+                <br />
+                <span className="text-gray-400 text-[12px] md:text-[13px] max-w-xs">
+                  Mentorship & Empowerment Training Centre
+                </span>
+              </div>
+            </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
               Professional mobile phone & laptop repair training centre.
               Hands-on courses, certified instructors, and career support.
@@ -50,19 +60,22 @@ export default function Footer() {
 
           {/* QUICK LINKS */}
           <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-            <h3 className="text-base font-semibold mb-5">Quick Links</h3>
-
+            <h3 className="text-base font-semibold mb-5 text-white">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <motion.a
-                    href={link.href}
+                  <motion.div
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-2 text-gray-400 text-sm hover:text-[#E91F31] transition"
+                    className="flex items-center gap-2"
                   >
-                    <ChevronRight size={14} />
-                    {link.name}
-                  </motion.a>
+                    <ChevronRight size={14} className="text-[#E91F31] flex-shrink-0" />
+                    <Link
+                      to={link.to}
+                      className="text-gray-400 text-sm hover:text-[#E91F31] transition-colors duration-300"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
@@ -70,8 +83,7 @@ export default function Footer() {
 
           {/* COURSES */}
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-            <h3 className="text-base font-semibold mb-5">Courses</h3>
-
+            <h3 className="text-base font-semibold mb-5 text-white">Courses</h3>
             <ul className="space-y-3">
               {courses.map((course, index) => (
                 <li key={index}>
@@ -90,23 +102,27 @@ export default function Footer() {
 
           {/* CONTACT */}
           <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
-            <h3 className="text-base font-semibold mb-5">Contact Us</h3>
-
+            <h3 className="text-base font-semibold mb-5 text-white">Contact Us</h3>
             <div className="space-y-4">
-
               {/* LOCATION */}
               <div className="flex items-start gap-3">
-                <MapPin size={16} className="text-[#E91F31] mt-1" />
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Kenya Cinema Building <br/>
-                  4th Floor, Aga Khan Walk <br/>
-                  Nairobi CBD, Kenya
-                </p>
+                <MapPin size={16} className="text-[#E91F31] mt-1 flex-shrink-0" />
+                <a
+                  href="https://maps.google.com/?q=Kenya+Cinema+Building,+4th+Floor,+Aga+Khan+Walk,+Nairobi+CBD,+Kenya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-400 leading-relaxed hover:text-[#E91F31] transition-colors duration-300 cursor-pointer group"
+                >
+                  Kenya Cinema Building <br />
+                  4th Floor, Aga Khan Walk <br />
+                  <span className="text-xs group-hover:underline">Nairobi CBD, Kenya →</span>
+                </a>
+
               </div>
 
               {/* PHONE */}
               <div className="flex items-start gap-3">
-                <Phone size={16} className="text-[#E91F31] mt-1" />
+                <Phone size={16} className="text-[#E91F31] mt-1 flex-shrink-0" />
                 <div className="text-sm text-gray-400 space-y-1">
                   <p>+254 725 128058</p>
                   <p>+254 723 319814</p>
@@ -115,7 +131,7 @@ export default function Footer() {
 
               {/* EMAIL */}
               <div className="flex items-start gap-3">
-                <Mail size={16} className="text-[#E91F31] mt-1" />
+                <Mail size={16} className="text-[#E91F31] mt-1 flex-shrink-0" />
                 <a
                   href="mailto:info@icure.africa"
                   className="text-sm text-gray-400 hover:text-[#E91F31] transition"
@@ -123,18 +139,13 @@ export default function Footer() {
                   info@icure.africa
                 </a>
               </div>
-
             </div>
           </motion.div>
-
         </div>
-
       </div>
 
-      {/* FULL WIDTH DIVIDER */}
       <div className="w-full h-px bg-[#E91F31] opacity-50"></div>
 
-      {/* COPYRIGHT */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -143,10 +154,9 @@ export default function Footer() {
         className="text-center py-6"
       >
         <p className="text-sm text-gray-500">
-          © {currentYear} iCURE Mentorship and Empowerment Training Centre.
+          © {currentYear} iCURE Mentorship & Empowerment Training Centre.
         </p>
       </motion.div>
-
     </footer>
   );
 }

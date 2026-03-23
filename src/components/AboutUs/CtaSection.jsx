@@ -2,6 +2,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ScrollReveal from '../ScrollReveal';
+import { Mail, Phone, Instagram, Facebook, Linkedin, XIcon } from 'lucide-react';
+
+const socialLinks = [
+  { label: "Email", href: "mailto:info@icure.africa", icon: Mail },
+  { label: "WhatsApp", href: "https://wa.me/254722415157", icon: Phone },
+  { label: "Instagram", href: "https://instagram.com/icure.africa", icon: Instagram },
+  { label: "Facebook", href: "https://facebook.com/icure.africa", icon: Facebook },
+  { label: "LinkedIn", href: "https://linkedin.com/company/icure-africa", icon: Linkedin },
+];
 
 export function CtaSection() {
   return (
@@ -17,24 +26,35 @@ export function CtaSection() {
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 tracking-tight mb-6">
               Want to Partner With Us?
             </h3>
-            <p className="text-gray-600 mb-8 text-sm md:text-base leading-relaxed max-w-lg mx-auto">
+            <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed max-w-lg mx-auto">
               We welcome partnerships with organisations, corporates, and individuals who share our vision of youth empowerment.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href="mailto:info@icure.africa"
-                className="inline-flex items-center gap-2 rounded-md border-2 border-[#E91F31]/40 bg-[#E91F31] px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-[#E91F31]/60 hover:bg-[#E91F31]/20 hover:shadow-lg hover:shadow-red-500/20 hover:scale-105"
-              >
-                Email Us
-              </a>
-              <a
-                href="https://wa.me/254722415157"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md border-2 border-[#E91F31]/40 bg-white px-8 py-4 text-sm font-semibold text-[#E91F31] backdrop-blur-sm transition-all duration-300 hover:border-[#E91F31]/60 hover:bg-[#E91F31]/20 hover:shadow-lg hover:shadow-red-500/20 hover:scale-105"
-              >
-                WhatsApp Us
-              </a>
+
+            {/* Social Links with red background & white icons */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`
+                      group flex items-center gap-2 px-4 py-2 rounded-md
+                      bg-[#E91F31] text-white text-xs md:text-sm font-semibold
+                      transition-colors duration-300 hover:bg-red-700
+                    `}
+                  >
+                    <Icon
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      strokeWidth="0"
+                    />
+                    {link.label}
+                  </a>
+                );
+              })}
             </div>
           </motion.div>
         </ScrollReveal>
