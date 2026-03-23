@@ -36,14 +36,14 @@ export default function HeroSection() {
             {/* BUTTONS */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:items-center">
               <a
-                href="#courses"
+                href="/courses"
                 className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition text-center w-full sm:w-[180px]"
               >
                 View Courses
               </a>
 
               <a
-                href="/about#donate"
+                href="/about"
                 className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition text-center w-full sm:w-[180px]"
               >
                 Make a Donation
