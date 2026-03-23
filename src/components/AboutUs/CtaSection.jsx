@@ -2,8 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ScrollReveal from '../ScrollReveal';
-import { Mail, Phone, Instagram, Facebook, Linkedin } from 'lucide-react'; // Remove XIcon if not used
-
+import { Mail, Phone, Instagram, Facebook, Linkedin } from 'lucide-react'; 
 
 const socialLinks = [
   { label: "Email", href: "mailto:info@icure.africa", icon: Mail },
