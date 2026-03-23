@@ -15,11 +15,8 @@ export function OurStory() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#E91F31] block mb-3">
-              Our Story
-            </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 tracking-tight">
-              Building Futures, <span className="text-[#E91F31]">One Youth at a Time</span>
+              Building Futures <span className="text-[#E91F31]">One Youth at a Time</span>
             </h2>
           </motion.div>
 

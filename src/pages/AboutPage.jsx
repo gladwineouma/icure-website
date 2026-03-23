@@ -8,7 +8,7 @@ import DonateSection from '../components/AboutUs/DonateSection';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50 relative">
+    <div className="min-h-screen relative">
       <HeroBanner />
       <OurStory />
       <ImpactStats />

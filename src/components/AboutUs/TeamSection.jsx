@@ -1,18 +1,17 @@
 import React from 'react';
 import { Award } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
-import StaggerChildren from '../StaggerChildren'
+import StaggerChildren from '../StaggerChildren';
 import { staggerItem } from '../StaggerChildren';
 import { motion } from "framer-motion";
 
-
 const teamMembers = [
-    { name: "Philip Omulama", role: "Director/C.E.O", image: "/phil.png" },
-    { name: "Mike Polycap", role: "Secretary", image: "/mike.png" },
-    { name: "Victor Wayiera", role: "Treasurer", image: "/vic.png" },
-    { name: "Clara Awuor ", role: "Program Coordinator", image: "/clara.png" },
-    { name: "Godwin Olingo", role: "Member", image: "/james.jpg" },    
-    { name: "Irene Muthoni", role: "Director", image: "/irine.jpg" },  
+  { name: "Philip Omulama", role: "Chairperson", image: "/phil.png" },
+  { name: "Irene Muthoni", role: "Vice Chairperson", image: "/irine.jpg" },
+  { name: "Mike Polycap", role: "Administrative Officer", image: "/mike.png" },
+  { name: "Victor Wayiera", role: "Finance Manager", image: "/vic.png" },
+  { name: "Clara Awuor", role: "Committee Member", image: "/clara.png" },
+  { name: "Godwin Olingo", role: "Committee Member", image: "/godwin.png" },
 ];
 
 export function TeamSection() {
@@ -42,18 +41,19 @@ export function TeamSection() {
         <StaggerChildren className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {teamMembers.map((member) => (
             <motion.div key={member.name} variants={staggerItem}>
-              <div key={member.name} className="group relative h-full w-full">
-                <div className="aspect-[4/5] w-full h-full rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl hover:shadow-3xl hover:-translate-y-3 bg-gradient-to-br from-black/10 to-black/20 backdrop-blur-sm transition-all duration-500 max-h-[450px]">
+              <div className="group relative h-full w-full">
+                <div className="w-full aspect-[4/5] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl hover:shadow-3xl hover:-translate-y-3 bg-gradient-to-br from-black/10 to-black/20 backdrop-blur-sm transition-all duration-500 max-h-[450px]">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/10 backdrop-blur-2xl border border-white/60 rounded-2xl shadow-xl group-hover:bg-black/30 transition-all duration-400">
-                    <h3 className="text-sm md:text-base font-semibold text-white mb-1 truncate drop-shadow-lg">
+                  {/* Overlay: text centered, less height on mobile */}
+                  <div className="absolute bottom-1 left-3 right-3 p-2 md:p-3 bg-black/50 backdrop-blur-lg border border-white/60 rounded-2xl shadow-xl group-hover:bg-black/60 transition-all duration-400 text-center">
+                    <h3 className="text-xs md:text-sm font-semibold text-white truncate mb-0.5">
                       {member.name}
                     </h3>
-                    <p className="text-[#E91F31] font-semibold text-xs md:text-sm px-2 py-px bg-white/40 rounded-full inline-block shadow-sm">
+                    <p className="text-[#E91F31] font-semibold text-xs px-2 py-0.5 md:py-1 bg-white/40 rounded-full inline-block shadow-sm">
                       {member.role}
                     </p>
                   </div>

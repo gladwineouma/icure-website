@@ -2,15 +2,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ScrollReveal from '../ScrollReveal';
-import { Mail, Phone, Instagram, Facebook, Linkedin, XIcon } from 'lucide-react';
+import { Mail, Phone, Instagram, Facebook, Linkedin } from 'lucide-react'; // Remove XIcon if not used
+
 
 const socialLinks = [
   { label: "Email", href: "mailto:info@icure.africa", icon: Mail },
   { label: "WhatsApp", href: "https://wa.me/254722415157", icon: Phone },
-  { label: "Instagram", href: "https://instagram.com/icure.africa", icon: Instagram },
-  { label: "Facebook", href: "https://facebook.com/icure.africa", icon: Facebook },
-  { label: "LinkedIn", href: "https://linkedin.com/company/icure-africa", icon: Linkedin },
+  { label: "Instagram", href: "https://www.instagram.com/icureservicescenter/", icon: Instagram },
+  { label: "Facebook", href: "https://www.facebook.com/people/I-Cure-Service-Center/61578901858726/#", icon: Facebook },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/icure-service-center-46b45137b/?originalSubdomain=ke", icon: Linkedin },  
 ];
+
+               
 
 export function CtaSection() {
   return (
@@ -40,17 +43,13 @@ export function CtaSection() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`
+                    className="
                       group flex items-center gap-2 px-4 py-2 rounded-md
                       bg-[#E91F31] text-white text-xs md:text-sm font-semibold
                       transition-colors duration-300 hover:bg-red-700
-                    `}
+                    "
                   >
-                    <Icon
-                      className="h-5 w-5"
-                      fill="currentColor"
-                      strokeWidth="0"
-                    />
+                    <Icon className="h-5 w-5" /> {/* Use stroke version, no fill */}
                     {link.label}
                   </a>
                 );

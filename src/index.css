@@ -2,7 +2,6 @@
 @import "tailwindcss";
 
 html {
-  /* DISABLE smooth scrolling - normal instant scroll */
   scroll-behavior: auto;
 }
 

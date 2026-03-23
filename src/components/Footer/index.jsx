@@ -99,12 +99,9 @@ export default function Footer() {
               ))}
             </ul>
           </motion.div>
-
-          {/* CONTACT */}
           <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
             <h3 className="text-base font-semibold mb-5 text-white">Contact Us</h3>
             <div className="space-y-4">
-              {/* LOCATION */}
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#E91F31] mt-1 flex-shrink-0" />
                 <a
