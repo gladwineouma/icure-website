@@ -51,7 +51,6 @@ function ValueCard({ value, index, isHovered, onHoverStart, onHoverEnd }) {
             : "bg-white border-gray-200 shadow-md"
         }`}
     >
-      {/* 🔥 Animated Glow (Dark Cards) */}
       {isDark && (
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
@@ -63,12 +62,9 @@ function ValueCard({ value, index, isHovered, onHoverStart, onHoverEnd }) {
         </motion.div>
       )}
 
-      {/* Light card soft bg */}
       {!isDark && (
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white" />
       )}
-
-      {/* Icon */}
       <div
         className={`relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-500
         ${isHovered
@@ -80,8 +76,6 @@ function ValueCard({ value, index, isHovered, onHoverStart, onHoverEnd }) {
       >
         <Icon size={28} strokeWidth={1.5} />
       </div>
-
-      {/* Title */}
       <h3
         className={`relative z-10 font-semibold text-lg mb-2 transition-colors duration-300
         ${isHovered
@@ -93,8 +87,6 @@ function ValueCard({ value, index, isHovered, onHoverStart, onHoverEnd }) {
       >
         {value.title}
       </h3>
-
-      {/* Divider */}
       <div
         className={`relative z-10 h-[3px] mx-auto mb-3 transition-all duration-500
         ${isHovered
@@ -102,22 +94,16 @@ function ValueCard({ value, index, isHovered, onHoverStart, onHoverEnd }) {
             : "w-8 bg-gradient-to-r from-[#E91F31] to-pink-300 opacity-70"
           }`}
       />
-
-      {/* Description */}
       <p
         className={`relative z-10 text-sm leading-relaxed line-clamp-4
         ${isDark ? "text-gray-300" : "text-gray-600"}`}
       >
         {value.desc}
       </p>
-
-      {/* Bottom Accent */}
       <div
         className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#E91F31] via-pink-400 to-transparent transition-all duration-500
         ${isHovered ? "w-full" : "w-0"}`}
       />
-
-      {/* 🔥 Neon Edge Glow */}
       <div
         className={`absolute inset-0 rounded-xl pointer-events-none transition-all duration-500
         ${isHovered
@@ -152,7 +138,6 @@ export default function CoreValuesSection() {
 
   return (
     <section className="py-20 bg-gradient-to-br from-white via-pink-50 to-white relative overflow-hidden">
-      {/* Background glow */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-pink-300/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#ff2d55]/20 rounded-full blur-3xl" />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -164,7 +149,6 @@ export default function CoreValuesSection() {
           </div>
         </ScrollReveal>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
           {visibleCards.map((value, index) => (
             <ValueCard
@@ -177,8 +161,6 @@ export default function CoreValuesSection() {
             />
           ))}
         </div>
-
-        {/* Dots */}
         <div className="flex justify-center gap-3 mt-10">
           {values.map((_, index) => (
             <button

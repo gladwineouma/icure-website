@@ -30,11 +30,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white">
-      {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-12">
         <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
-
-          {/* LOGO + DESCRIPTION */}
           <motion.div {...fadeInUp}>
             <div className="flex items-start gap-2 mb-5">
               <img
@@ -57,8 +54,6 @@ export default function Footer() {
               Hands-on courses, certified instructors, and career support.
             </p>
           </motion.div>
-
-          {/* QUICK LINKS */}
           <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
             <h3 className="text-base font-semibold mb-5 text-white">Quick Links</h3>
             <ul className="space-y-3">
@@ -80,8 +75,6 @@ export default function Footer() {
               ))}
             </ul>
           </motion.div>
-
-          {/* COURSES */}
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
             <h3 className="text-base font-semibold mb-5 text-white">Courses</h3>
             <ul className="space-y-3">
@@ -116,8 +109,6 @@ export default function Footer() {
                 </a>
 
               </div>
-
-              {/* PHONE */}
               <div className="flex items-start gap-3">
                 <Phone size={16} className="text-[#E91F31] mt-1 flex-shrink-0" />
                 <div className="text-sm text-gray-400 space-y-1">
@@ -125,8 +116,6 @@ export default function Footer() {
                   <p>+254 723 319814</p>
                 </div>
               </div>
-
-              {/* EMAIL */}
               <div className="flex items-start gap-3">
                 <Mail size={16} className="text-[#E91F31] mt-1 flex-shrink-0" />
                 <a

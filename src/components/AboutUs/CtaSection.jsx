@@ -6,7 +6,7 @@ import { Mail, Phone, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const socialLinks = [
   { label: "Email", href: "mailto:info@icure.africa", icon: Mail },
-  { label: "WhatsApp", href: "https://wa.me/254722415157", icon: Phone },
+  { label: "WhatsApp", href: "https://wa.me/254725128058", icon: Phone },
   { label: "Instagram", href: "https://www.instagram.com/icureservicescenter/", icon: Instagram },
   { label: "Facebook", href: "https://www.facebook.com/people/I-Cure-Service-Center/61578901858726/#", icon: Facebook },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/icure-service-center-46b45137b/?originalSubdomain=ke", icon: Linkedin },  
@@ -32,7 +32,6 @@ export function CtaSection() {
               We welcome partnerships with organisations, corporates, and individuals who share our vision of youth empowerment.
             </p>
 
-            {/* Social Links with red background & white icons */}
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {socialLinks.map((link) => {
                 const Icon = link.icon;
@@ -48,7 +47,7 @@ export function CtaSection() {
                       transition-colors duration-300 hover:bg-red-700
                     "
                   >
-                    <Icon className="h-5 w-5" /> {/* Use stroke version, no fill */}
+                    <Icon className="h-5 w-5" /> 
                     {link.label}
                   </a>
                 );

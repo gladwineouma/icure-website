@@ -60,8 +60,6 @@ export default function FAQSection() {
       className="w-full py-16 bg-white flex justify-center"
     >
       <div className="w-full max-w-3xl px-4">
-
-        {/* Animated Title */}
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,13 +70,9 @@ export default function FAQSection() {
           Frequently Asked{" "}
           <span className="text-[#E91F31] font-medium">Questions</span>
         </motion.h2>
-
-        {/* FAQ Items */}
         <div className="flex flex-col gap-4">
-
           {visibleFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
-
             return (
               <motion.div
                 key={index}
@@ -130,8 +124,6 @@ export default function FAQSection() {
           })}
 
         </div>
-
-        {/* Show More Button */}
         <motion.div
           className="text-center mt-10"
           initial={{ opacity: 0 }}

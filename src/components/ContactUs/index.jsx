@@ -11,7 +11,7 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessCard, setShowSuccessCard] = useState(false);
 
-  const handleSubmit = (formData) => {
+  const handleSubmit = () => {
     setIsSubmitting(true);
 
     setTimeout(() => {
@@ -31,25 +31,19 @@ const ContactSection = () => {
       id="contact"
       className="relative py-24 px-5 overflow-hidden min-h-screen"
     >
-      {/* 🔥 Background Image */}
+      {/* 🔥 Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80')",
+          backgroundImage: "url('/contactbg.jpg')",
         }}
       >
-        {/* ✅ Dark overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
-
-        {/* ✅ Glass blur layer */}
-        <div className="absolute inset-0 backdrop-blur-md"></div>
-
-        {/* ✅ Gradient depth (this makes it look premium) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"></div>
       </div>
 
-      {/* Success Modal */}
+      {/* ✅ Success Modal */}
       <AnimatePresence>
         {showSuccessCard && (
           <motion.div
@@ -82,13 +76,7 @@ const ContactSection = () => {
                 transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                 className="w-20 h-20 rounded-full bg-red-500/10 flex items-center justify-center mx-auto mb-6"
               >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <CheckCircle size={40} className="text-[#E91F31]" />
-                </motion.div>
+                <CheckCircle size={40} className="text-[#E91F31]" />
               </motion.div>
 
               <motion.h3
@@ -110,28 +98,18 @@ const ContactSection = () => {
                 get back to you within 24 hours.
               </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="w-full h-1 bg-gray-200 rounded overflow-hidden mb-4"
-              >
+              <div className="w-full h-1 bg-gray-200 rounded overflow-hidden mb-4">
                 <motion.div
                   initial={{ width: "100%" }}
                   animate={{ width: "0%" }}
                   transition={{ duration: 5, ease: "linear" }}
                   className="h-full bg-[#E91F31]"
                 />
-              </motion.div>
+              </div>
 
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 }}
-                className="text-xs text-gray-400"
-              >
+              <p className="text-xs text-gray-400">
                 Closing in 5 seconds...
-              </motion.p>
+              </p>
 
               <motion.button
                 onClick={closeSuccessCard}
@@ -146,6 +124,7 @@ const ContactSection = () => {
         )}
       </AnimatePresence>
 
+      {/* 🔥 Content */}
       <div className="relative z-10 max-w-6xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -172,10 +151,21 @@ const ContactSection = () => {
           </div>
         </ScrollReveal>
 
+        {/* 🔥 Glass Cards */}
         <div className="w-full max-w-6xl mx-auto px-4 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <ContactForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />
-            <ContactDetails />
+
+            <div className="transform transition duration-500 hover:-translate-y-2">
+              <ContactForm
+                onSubmit={handleSubmit}
+                isSubmitting={isSubmitting}
+              />
+            </div>
+
+            <div className="transform transition duration-500 hover:-translate-y-2">
+              <ContactDetails />
+            </div>
+
           </div>
         </div>
       </div>

@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   return (
     <section id="home" className="relative w-full">
-      {/* HERO */}
       <div
         className="relative min-h-screen flex items-center"
         style={{
@@ -14,10 +13,7 @@ export default function HeroSection() {
           backgroundPosition: "center",
         }}
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-[#E91F31]/20"></div>
-
-        {/* HERO CONTENT */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,8 +28,6 @@ export default function HeroSection() {
             <p className="mt-4 text-lg md:text-xl text-gray-200">
               Training Minds, Repairing Future
             </p>
-
-            {/* BUTTONS */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:items-center">
               <a
                 href="/courses"
@@ -53,12 +47,8 @@ export default function HeroSection() {
           </div>
         </motion.div>
       </div>
-
-      {/* STATS CARD */}
       <div className="max-w-5xl mx-auto px-6 -mt-12 relative z-10">
         <div className="bg-white rounded-lg shadow-xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          {/* Graduates Empowered */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -74,8 +64,6 @@ export default function HeroSection() {
               <p className="text-gray-600">Graduates Empowered</p>
             </div>
           </motion.div>
-
-          {/* Job Placement */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -91,8 +79,6 @@ export default function HeroSection() {
               <p className="text-gray-600">Job Placement Rate</p>
             </div>
           </motion.div>
-
-          {/* Practical Hours */}
           <motion.div
             className="flex items-center justify-center md:justify-start gap-4"
             initial={{ opacity: 0, y: 40 }}
@@ -110,8 +96,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
-
-      {/* FEATURE CARDS */}
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
         <motion.div
           className="bg-white shadow-md border border-red-200 rounded-lg p-6 flex gap-4 items-start"
@@ -131,7 +115,6 @@ export default function HeroSection() {
             </p>
           </div>
         </motion.div>
-
         <motion.div
           className="bg-white shadow-md border border-red-200 rounded-lg p-6 flex gap-4 items-start"
           initial={{ opacity: 0, y: 60 }}

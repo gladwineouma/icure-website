@@ -17,11 +17,7 @@ const IndexPage = () => {
       <HeroSection />
       <AboutSection />
       <CoreValuesSection />
-      {/* <CourseLevelsSection /> */}
       <WhyChooseUs />
-      {/* <GallerySection /> */}
-      {/* <TestimonialsSection /> */}
-      {/* <FAQSection /> */}
       <ContactSection />
      
     </>

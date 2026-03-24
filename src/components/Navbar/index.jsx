@@ -6,8 +6,6 @@ export default function Navbar() {
   const location = useLocation();
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
-
-  // Update active based on current route
   useEffect(() => {
     const pathToSection = {
       "/": "home",
@@ -21,8 +19,6 @@ export default function Navbar() {
     const currentSection = pathToSection[location.pathname] || "home";
     setActive(currentSection);
   }, [location.pathname]);
-
-  // Optional: Keep scroll-based detection only for home page
   useEffect(() => {
     if (location.pathname !== "/") return;
 
@@ -62,7 +58,6 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-white z-50 shadow-sm">
       <div className="w-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-between">
-        {/* Logo */}
         <div className="flex items-start gap-2 cursor-pointer">
           <img
             src="/icure-logo.png"
@@ -80,8 +75,6 @@ export default function Navbar() {
             </span>
           </div>
         </div>
-
-        {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-8 text-[15px] font-medium">
           <li className={linkClass("home")}>
             <Link to="/">Home</Link>
@@ -107,16 +100,12 @@ export default function Navbar() {
             <Link to="/contactus">Contact Us</Link>
           </li>
         </ul>
-
-        {/* Desktop CTA */}
         <Link
           to="/contactus"
           className="hidden md:block bg-[#E91F31] text-white px-5 py-2 rounded-md hover:bg-red-700 transition"
         >
           Enroll Now
         </Link>
-
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden"
@@ -124,8 +113,6 @@ export default function Navbar() {
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
-
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-lg border-t">
           <ul className="flex flex-col items-center gap-6 py-8 text-[16px] font-medium">
@@ -188,8 +175,6 @@ export default function Navbar() {
                 Contact Us
               </Link>
             </li>
-
-            {/* Mobile CTA */}
             <li>
               <Link
                 to="/contactus"

@@ -69,7 +69,6 @@ function LevelCard({ level }) {
       whileHover={{ y: -6 }}
       className="group rounded-lg border border-gray-200 bg-white overflow-hidden transition-all hover:border-red-400"
     >
-      {/* Image */}
       <div className="relative h-56 md:h-64 overflow-hidden">
         <motion.img
           src={level.img}
@@ -91,8 +90,6 @@ function LevelCard({ level }) {
           </span>
         </div>
       </div>
-
-      {/* Content */}
       <div className="p-5">
         <h4 className="text-lg font-[500]">{level.title}</h4>
 
@@ -131,7 +128,6 @@ export default function CourseLevelsSection() {
   return (
     <section id="courses" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -148,8 +144,6 @@ export default function CourseLevelsSection() {
             beginner to expert.
           </p>
         </motion.div>
-
-        {/* Courses */}
         <div className="grid gap-8 md:grid-cols-2">
           {coursesData.map((course, index) => (
             <motion.div
@@ -158,21 +152,15 @@ export default function CourseLevelsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="rounded-xl border border-gray-200 bg-gray-50 p-6 md:p-8"
-            >
-              {/* Course Header */}
+              className="rounded-xl border border-gray-200 bg-gray-50 p-6 md:p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-11 h-11 flex items-center justify-center rounded-full border border-red-500/30 bg-red-500/10 flex-shrink-0">
                   <span className="text-[#E91F31]">
                     {course.icon}
                   </span>
                 </div>
-
-
                 <h3 className="text-xl font-medium">{course.name}</h3>
               </div>
-
-              {/* Levels */}
               <div className="space-y-4">
                 {course.levels.map((level) => (
                   <LevelCard key={level.level} level={level} />

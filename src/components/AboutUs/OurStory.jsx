@@ -41,7 +41,7 @@ export function OurStory() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
                 <img
-                  src="/gallery-4.png"
+                  src="/cboCert.png"
                   alt="iCure CBO Registration"
                   className="w-full h-auto object-cover"
                 />

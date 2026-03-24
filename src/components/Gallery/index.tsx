@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { Camera, Download, X } from "lucide-react";
 
 const images = [
-    { src: "/gallery-1.png", alt: "Precision soldering work", caption: "Hands-On Soldering" },
-    { src: "/gallery-2.png", alt: "Students learning laptop repair", caption: "Classroom Training" },
+    { src: "/gallery-1 (2).png", alt: "Precision soldering work", caption: "Hands-On Soldering" },
+    { src: "/one.JPG", alt: "Students learning laptop repair", caption: "Classroom Training" },
     { src: "/gallery-3.png", alt: "Professional repair tools", caption: "Pro-Grade Tools" },
     { src: "/gallery-4.png", alt: "Graduation ceremony", caption: "Certification Day" },
-    { src: "/gallery-5.png", alt: "Microscope repair work", caption: "Precision Diagnostics" },
-    { src: "/gallery-6.png", alt: "Collaborative learning", caption: "Team Projects" },
+    { src: "/gallery-5 (2).png", alt: "Microscope repair work", caption: "Precision Diagnostics" },
+    { src: "/groupwork.JPG", alt: "Collaborative learning", caption: "Team Projects" },
 ];
 
 export default function GallerySection() {
@@ -17,8 +17,6 @@ export default function GallerySection() {
     return (
         <section id="gallery" className="py-20 bg-gray-50">
             <div className="max-w-6xl mx-auto px-6">
-
-                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -26,8 +24,6 @@ export default function GallerySection() {
                     viewport={{ once: true }}
                     className="text-center mb-12"
                 >
-                    
-
                     <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
                         Impact <span className="text-[#E91F31]">Gallery</span>
                     </h1>
@@ -37,8 +33,6 @@ export default function GallerySection() {
                         and proud graduates.
                     </p>
                 </motion.div>
-
-                {/* Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
 
                     {images.map((img, i) => (
@@ -69,8 +63,6 @@ export default function GallerySection() {
 
                 </div>
             </div>
-
-            {/* Image Modal */}
             {selected !== null && (
                 <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-6">
 
@@ -78,9 +70,9 @@ export default function GallerySection() {
 
                         <button
                             onClick={() => setSelected(null)}
-                            className="absolute -top-10 right-0 text-white"
+                            className="absolute top-6 right-3 z-50 text-white bg-black/60 p-2 rounded-full hover:bg-black transition"
                         >
-                            <X />
+                            <X size={20} />
                         </button>
 
                         <img
@@ -88,18 +80,7 @@ export default function GallerySection() {
                             alt={images[selected].alt}
                             className="w-full rounded-lg"
                         />
-
-                        <a
-                            href={images[selected].src}
-                            download
-                            className="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-md flex items-center gap-2 text-sm font-medium"
-                        >
-                            <Download className="h-4 w-4" />
-                            Download
-                        </a>
-
                     </div>
-
                 </div>
             )}
         </section>

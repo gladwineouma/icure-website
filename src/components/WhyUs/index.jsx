@@ -7,22 +7,14 @@ export default function WhyChooseUs() {
       className="py-20 px-5 scroll-mt-24 bg-[#f9fafb]"
     >
       <div className="max-w-6xl mx-auto">
-
-        {/* Heading */}
         <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-gray-900">
           Why <span className="text-[#E91F31]">Choose</span> Us
         </h1>
-
-        {/* Subtitle */}
         <p className="text-center text-gray-600 text-base md:text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
           We're not just a school — we're a launchpad for your tech career.
           Here's what sets iCure apart from the rest.
         </p>
-
-        {/* Cards */}
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-
-          {/* Card */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,8 +34,6 @@ export default function WhyChooseUs() {
               laptop repair.
             </p>
           </motion.div>
-
-          {/* Card */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,8 +53,6 @@ export default function WhyChooseUs() {
               are job-ready from day one.
             </p>
           </motion.div>
-
-          {/* Card */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}

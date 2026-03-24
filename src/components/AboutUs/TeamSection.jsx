@@ -48,7 +48,6 @@ export function TeamSection() {
                     alt={member.name}
                     className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                   />
-                  {/* Overlay: text centered, less height on mobile */}
                   <div className="absolute bottom-1 left-3 right-3 p-2 md:p-3 bg-black/50 backdrop-blur-lg border border-white/60 rounded-2xl shadow-xl group-hover:bg-black/60 transition-all duration-400 text-center">
                     <h3 className="text-xs md:text-sm font-semibold text-white truncate mb-0.5">
                       {member.name}

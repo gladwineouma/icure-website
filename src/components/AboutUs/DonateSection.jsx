@@ -38,7 +38,6 @@ export default function DonateSection() {
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
 
-                {/* Sponsor a Student */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +46,7 @@ export default function DonateSection() {
                     whileHover={{ y: -8 }}
                     className="group relative rounded-2xl border border-[#E91F31]/20 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:border-[#E91F31]/50 hover:bg-white/10 shadow-lg shadow-red-500/20"
                 >
-                    {/* Badge */}
+                  
                     <div className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-[#E91F31] text-white px-3 py-1 rounded-full shadow-md">
                         Most Impactful
                     </div>
@@ -86,17 +85,9 @@ export default function DonateSection() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Hover CTA */}
-                        <div className="mt-6 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                            <span className="text-[#E91F31] font-semibold text-sm tracking-wide">
-                                Start Sponsoring →
-                            </span>
-                        </div>
                     </div>
                 </motion.div>
-
-                {/* Go Green */}
+                
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}

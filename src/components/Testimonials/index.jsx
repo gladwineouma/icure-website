@@ -42,13 +42,10 @@ export default function TestimonialsSection() {
             id="testimonials"
             className="relative py-24 bg-gray-50 overflow-hidden"
         >
-            {/* Background glow */}
             <div className="absolute top-10 left-10 h-64 w-64 rounded-full bg-[#E91F31]/5 blur-3xl" />
             <div className="absolute bottom-10 right-10 h-48 w-48 rounded-full bg-[#E91F31]/5 blur-3xl" />
 
             <div className="max-w-6xl mx-auto px-6 relative">
-
-                {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -65,8 +62,6 @@ export default function TestimonialsSection() {
                         Real stories from real technicians who transformed their careers.
                     </p>
                 </motion.div>
-
-                {/* Testimonials Grid */}
                 <div className="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
 
                     {testimonials.map((t, index) => (
@@ -79,11 +74,8 @@ export default function TestimonialsSection() {
                             whileHover={{ y: -6 }}
                             className="group relative rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-red-400 hover:shadow-lg"
                         >
-
-                            {/* Quote Icon */}
                             <Quote className="absolute top-4 right-4 h-8 w-8 text-[#E91F31]/10 group-hover:text-[#E91F31]/20 transition-colors" />
 
-                            {/* Stars */}
                             <div className="flex gap-0.5 mb-3">
                                 {Array.from({ length: t.rating }).map((_, i) => (
                                     <Star
@@ -92,18 +84,12 @@ export default function TestimonialsSection() {
                                     />
                                 ))}
                             </div>
-
-                            {/* Course */}
                             <span className="inline-block rounded-full bg-[#E91F31]/10 px-3 py-1 text-xs font-medium text-[#E91F31] mb-3">
                                 {t.course}
                             </span>
-
-                            {/* Text */}
                             <p className="text-sm text-gray-600 leading-relaxed italic">
                                 "{t.text}"
                             </p>
-
-                            {/* User */}
                             <div className="mt-5 border-t border-gray-200 pt-4 flex items-center gap-3">
 
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E91F31] text-white text-sm font-medium">

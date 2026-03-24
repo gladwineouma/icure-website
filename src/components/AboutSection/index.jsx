@@ -91,8 +91,6 @@ export default function AboutSection() {
             );
           })}
         </div>
-
-        {/* Added CBO Section */}
         <ScrollReveal>
           <div className="mt-12 text-center">
             <p className="text-gray-300/70 mb-4 text-sm md:text-base max-w-2xl mx-auto">
