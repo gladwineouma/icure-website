@@ -1,5 +1,6 @@
 import { GraduationCap, Briefcase, Hourglass, Wrench, Hand } from "lucide-react";
 import CountUp from "react-countup";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -29,20 +30,19 @@ export default function HeroSection() {
               Training Minds, Repairing Future
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:items-center">
-              <a
-                href="/courses"
+              <Link
+                to="/courses"
                 className="bg-red-500 hover:bg-red-600 px-6 py-3 text-sm font-medium rounded-md transition text-center w-full sm:w-[180px]"
               >
                 View Courses
-              </a>
+              </Link>
 
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition text-center w-full sm:w-[180px]"
               >
                 Make a Donation
-              </a>
-
+              </Link>
             </div>
           </div>
         </motion.div>
