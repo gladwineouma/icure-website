@@ -7,7 +7,7 @@ const images = [
     { src: "/one.JPG", alt: "Students learning laptop repair", caption: "Classroom Training" },
     { src: "/gallery-3.png", alt: "Professional repair tools", caption: "Pro-Grade Tools" },
     { src: "/gallery-4.png", alt: "Graduation ceremony", caption: "Certification Day" },
-    { src: "/gallery-5 (2).png", alt: "Microscope repair work", caption: "Precision Diagnostics" },
+    { src: "/gallery-5.png", alt: "Microscope repair work", caption: "Precision Diagnostics" },
     { src: "/groupwork.JPG", alt: "Collaborative learning", caption: "Team Projects" },
 ];
 
