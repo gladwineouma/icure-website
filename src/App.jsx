@@ -10,12 +10,14 @@ import GalleryPage from "./pages/Gallery";
 import WhatsAppButton from "./components/Watsapp/WatsappButton";
 import CoursesPage from "./pages/CoursesPage";
 import ScrollToTop from "./components/ScrollTop/ScrollToTop";
+import ScrollToHash from "./components/ScrollToHash/ScrollToHash";
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
+        <ScrollToHash/>
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<IndexPage />} />

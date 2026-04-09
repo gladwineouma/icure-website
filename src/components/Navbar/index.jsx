@@ -15,7 +15,7 @@ export default function Navbar() {
       "/faqs": "faqs",
       "/contactus": "contactus",
     };
-    
+
     const currentSection = pathToSection[location.pathname] || "home";
     setActive(currentSection);
   }, [location.pathname]);
@@ -45,14 +45,12 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const linkClass = (section) =>
-    `relative cursor-pointer transition-all duration-300 flex items-center ${
-      active === section
-        ? "text-[#E91F31]"
-        : "text-gray-700 hover:text-[#E91F31]"
-    } ${
-      active === section
-        ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-[#E91F31] after:rounded-full"
-        : "after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1 after:bg-[#E91F31] after:rounded-full group-hover:after:w-8 group-hover:after:translate-x-0"
+    `relative cursor-pointer transition-all duration-300 flex items-center ${active === section
+      ? "text-[#E91F31]"
+      : "text-gray-700 hover:text-[#E91F31]"
+    } ${active === section
+      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-[#E91F31] after:rounded-full"
+      : "after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1 after:bg-[#E91F31] after:rounded-full group-hover:after:w-8 group-hover:after:translate-x-0"
     } group pb-2`;
 
   return (
@@ -101,10 +99,10 @@ export default function Navbar() {
           </li>
         </ul>
         <Link
-          to="/contactus"
-          className="hidden md:block bg-[#E91F31] text-white px-5 py-2 rounded-md hover:bg-red-700 transition"
+          to="/about#donate"
+          className="hidden md:block bg-[#E91F31] text-white font-semibold px-5 py-2 rounded-md hover:bg-red-700 transition"
         >
-          Enroll Now
+          Donate
         </Link>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -176,13 +174,15 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link
-                to="/contactus"
-                onClick={() => setMenuOpen(false)}
-                className="block w-full bg-[#E91F31] text-white px-6 py-3 rounded-md hover:bg-red-600 transition text-center"
-              >
-                Enroll Now
-              </Link>
+              <li>
+                <Link
+                  to="/about#donate"
+                  onClick={() => setMenuOpen(false)}
+                  className="block w-full bg-[#E91F31] text-white font-semibold px-6 py-3 rounded-md hover:bg-red-600 transition text-center"
+                >
+                  Donate
+                </Link>
+              </li>
             </li>
           </ul>
         </div>

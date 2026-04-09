@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const teamMembers = [
   { name: "Philip Omulama", role: "Chairperson", image: "/phil.png" },
   { name: "Irene Muthoni", role: "Vice Chairperson", image: "/irine.jpg" },
-  { name: "Mike Polycap", role: "Administrative Officer", image: "/mike.png" },
+  { name: "Mike Polycap", role: "Admin Officer", image: "/mike.png" },
   { name: "Victor Wayiera", role: "Finance Manager", image: "/vic.png" },
   { name: "Clara Awuor", role: "Committee Member", image: "/clara.png" },
   { name: "Godwin Olingo", role: "Committee Member", image: "/godwin.png" },
@@ -30,7 +30,7 @@ export function TeamSection() {
               Our Team
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 tracking-tight">
-              Meet the People Behind iCure
+              Meet the People  <span className="text-[#E91F31]">Behind iCure</span>
             </h2>
             <p className="mt-4 text-gray-600 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
               Passionate individuals dedicated to mentoring and empowering youth in our community.

@@ -1,22 +1,21 @@
-// src/components/About/CtaSection.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import ScrollReveal from '../ScrollReveal';
-import { Mail, Phone, Instagram, Facebook, Linkedin } from 'lucide-react'; 
+import { Mail, Phone, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const socialLinks = [
   { label: "Email", href: "mailto:info@icure.africa", icon: Mail },
   { label: "WhatsApp", href: "https://wa.me/254725128058", icon: Phone },
   { label: "Instagram", href: "https://www.instagram.com/icureservicescenter/", icon: Instagram },
   { label: "Facebook", href: "https://www.facebook.com/people/I-Cure-Service-Center/61578901858726/#", icon: Facebook },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/icure-service-center-46b45137b/?originalSubdomain=ke", icon: Linkedin },  
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/icure-service-center-46b45137b/?originalSubdomain=ke", icon: Linkedin },
 ];
 
-               
+
 
 export function CtaSection() {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24">
       <div className="container mx-auto px-6 max-w-2xl text-center">
         <ScrollReveal>
           <motion.div
@@ -26,12 +25,11 @@ export function CtaSection() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 tracking-tight mb-6">
-              Want to Partner With Us?
+              Support iCure <span className="text-[#E91F31]"> Today!</span>
             </h3>
             <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed max-w-lg mx-auto">
-              We welcome partnerships with organisations, corporates, and individuals who share our vision of youth empowerment.
+              Join us in transforming lives! Support iCure with your donations and help empower youth to reach their full potential.
             </p>
-
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {socialLinks.map((link) => {
                 const Icon = link.icon;
@@ -47,7 +45,7 @@ export function CtaSection() {
                       transition-colors duration-300 hover:bg-red-700
                     "
                   >
-                    <Icon className="h-5 w-5" /> 
+                    <Icon className="h-5 w-5" />
                     {link.label}
                   </a>
                 );

@@ -38,7 +38,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                to="/about"
+                to="/about#donate"
                 className="bg-white text-red-500 border border-red-500 px-6 py-3 text-sm font-medium rounded-md hover:bg-red-50 transition text-center w-full sm:w-[180px]"
               >
                 Make a Donation
