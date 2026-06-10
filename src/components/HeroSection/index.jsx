@@ -59,7 +59,7 @@ export default function HeroSection() {
             <GraduationCap size={36} className="text-[#E91F31]" />
             <div>
               <h3 className="text-2xl md:text-3xl font-semibold">
-                <CountUp end={3400} duration={2.5} enableScrollSpy scrollSpyOnce />+
+                <CountUp end={700} duration={3.5} enableScrollSpy scrollSpyOnce />+
               </h3>
               <p className="text-gray-600">Graduates Empowered</p>
             </div>
