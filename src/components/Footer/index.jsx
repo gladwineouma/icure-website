@@ -54,6 +54,7 @@ export default function Footer() {
               Hands-on courses, certified instructors, and career support.
             </p>
           </motion.div>
+
           <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
             <h3 className="text-base font-semibold mb-5 text-white">Quick Links</h3>
             <ul className="space-y-3">
@@ -75,30 +76,36 @@ export default function Footer() {
               ))}
             </ul>
           </motion.div>
+
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
             <h3 className="text-base font-semibold mb-5 text-white">Courses</h3>
             <ul className="space-y-3">
               {courses.map((course, index) => (
                 <li key={index}>
-                  <motion.a
-                    href={course.href}
+                  <motion.div
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-2 text-gray-400 text-sm hover:text-[#E91F31] transition"
+                    className="flex items-center gap-2"
                   >
-                    <ChevronRight size={14} />
-                    {course.name}
-                  </motion.a>
+                    <ChevronRight size={14} className="text-[#E91F31] flex-shrink-0" />
+                    <Link
+                      to={course.href}
+                      className="text-gray-400 text-sm hover:text-[#E91F31] transition-colors duration-300"
+                    >
+                      {course.name}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
           </motion.div>
+
           <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
             <h3 className="text-base font-semibold mb-5 text-white">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#E91F31] mt-1 flex-shrink-0" />
                 <a
-                  href="https://maps.google.com/?q=Kenya+Cinema+Building,+4th+Floor,+Aga+Khan+Walk,+Nairobi+CBD,+Kenya"
+                  href="https://google.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-400 leading-relaxed hover:text-[#E91F31] transition-colors duration-300 cursor-pointer group"
@@ -107,7 +114,6 @@ export default function Footer() {
                   4th Floor, Aga Khan Walk <br />
                   <span className="text-xs group-hover:underline">Nairobi CBD, Kenya →</span>
                 </a>
-
               </div>
               <div className="flex items-start gap-3">
                 <Phone size={16} className="text-[#E91F31] mt-1 flex-shrink-0" />

@@ -57,18 +57,18 @@ const coursesData = [
   },
 ];
 
-function LevelCard({ level }) {
+function LevelCard({ level, id }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <motion.div
+      id={id} 
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
       whileHover={{ y: -6 }}
-      className="group rounded-lg border border-gray-200 bg-white overflow-hidden transition-all hover:border-red-400"
-    >
+      className="group rounded-lg border border-gray-200 bg-white overflow-hidden transition-all hover:border-red-400 scroll-mt-24" >
       <div className="relative h-56 md:h-64 overflow-hidden">
         <motion.img
           src={level.img}
@@ -162,9 +162,20 @@ export default function CourseLevelsSection() {
                 <h3 className="text-xl font-medium">{course.name}</h3>
               </div>
               <div className="space-y-4">
-                {course.levels.map((level) => (
-                  <LevelCard key={level.level} level={level} />
-                ))}
+                {course.levels.map((level) => {
+                  // Dynamically maps navigation strings matching your footer without altering your data objects
+                  const categoryKey = course.name.toLowerCase().includes("phone") ? "phone" : "laptop";
+                  const levelKey = level.level.toLowerCase().includes("1") ? "basic" : "advanced";
+                  const generatedId = `${levelKey}-${categoryKey}`;
+
+                  return (
+                    <LevelCard
+                      key={level.level}
+                      level={level}
+                      id={generatedId}
+                    />
+                  );
+                })}
               </div>
             </motion.div>
           ))}
