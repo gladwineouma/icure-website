@@ -22,17 +22,17 @@ const galleryCategories = [
             { src: "/practicallab.jpg", alt: "Practical laboratory" },
             { src: "/instructor.jpg", alt: "Instructor guiding learner" },
             { src: "/peercollaboration.jpeg", alt: "Peer collaboration" },
-            { src: "/workshopassignment.jpeg", alt: "Workshop assignment" },
+            { src: "/handsontraining.jpeg", alt: "Workshop assignment" },
         ]
     },
     {
         title: "People Who Make iCure Happen",
         images: [
-            { src: "/happen1.jpeg", alt: "Management team" },
-            { src: "/mike.jpg", alt: "Volunteer trainers" },
-            { src: "/happen2.jpg", alt: "Staff meeting" },
+            { src: "/happen1.jpeg", alt: "Our Students" },
+            { src: "/mike.jpg", alt: "Training Director" },
+            { src: "/happen2.jpg", alt: "Icure Family" },
             { src: "/ground.jpg", alt: "Field operators" },
-            { src: "/trainer.jpg", alt: "Partner representatives" },
+            { src: "/trainer.jpg", alt: "Trainer" },
             { src: "/trainer2.jpg", alt: "Additional partner" },
         ]
     },
@@ -179,9 +179,9 @@ export default function GallerySection() {
                                                 transition={{ duration: 0.3 }}
                                                 className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3"
                                             >
-                                                {/* Section Title */}
+                                                {/* Image Description */}
                                                 <h3 className="text-white text-center font-semibold text-sm sm:text-base px-3 line-clamp-2">
-                                                    {category.title}
+                                                    {img.alt}
                                                 </h3>
 
                                                 {/* Plus Sign */}
@@ -241,9 +241,9 @@ export default function GallerySection() {
                                                 transition={{ duration: 0.3 }}
                                                 className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3"
                                             >
-                                                {/* Section Title */}
+                                                {/* Image Description */}
                                                 <h3 className="text-white text-center font-semibold text-sm sm:text-base px-3 line-clamp-2">
-                                                    {category.title}
+                                                    {img.alt}
                                                 </h3>
 
                                                 {/* Plus Sign */}
