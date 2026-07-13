@@ -30,6 +30,14 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white">
+      {/* 
+<footer className="bg-black text-white">
+<footer className="bg-[#111111] text-white">
+<footer className="bg-[#282828] text-white"> ok
+<footer className="bg-[#0C0202] text-white">
+<footer className="bg-[#242424] text-white">
+
+*/}
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-12">
         <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
           <motion.div {...fadeInUp}>

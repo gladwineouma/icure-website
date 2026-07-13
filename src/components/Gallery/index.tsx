@@ -1,88 +1,331 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Camera, Download, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, Plus, ChevronLeft, ChevronRight } from "lucide-react";
 
-const images = [
-    { src: "/gallery-1 (2).png", alt: "Precision soldering work", caption: "Hands-On Soldering" },
-    { src: "/one.JPG", alt: "Students learning laptop repair", caption: "Classroom Training" },
-    { src: "/gallery-3.png", alt: "Professional repair tools", caption: "Pro-Grade Tools" },
-    { src: "/gallery-4.png", alt: "Graduation ceremony", caption: "Certification Day" },
-    { src: "/gallery-5.png", alt: "Microscope repair work", caption: "Precision Diagnostics" },
-    { src: "/groupwork.JPG", alt: "Collaborative learning", caption: "Team Projects" },
+const galleryCategories = [
+    {
+        title: "Community Outreach",
+        images: [
+            { src: "/outreach1.jpeg", alt: "Community engagement" },
+            { src: "/outreach2.jpeg", alt: "Technical camps" },
+            { src: "/outreach3.jpeg", alt: "Support distributions" },
+            { src: "/outreach4.jpeg", alt: "Awareness drive" },
+            { src: "/outreach5.jpeg", alt: "Local leaders partnership" },
+            { src: "/outreach-6.jpeg", alt: "Mobilization event" },
+        ]
+    },
+    {
+        title: "Classroom Activities",
+        images: [
+            { src: "/handsontraining.jpg", alt: "Hands-on training" },
+            { src: "/assignment.jpg", alt: "Group training session" },
+            { src: "/practicallab.jpg", alt: "Practical laboratory" },
+            { src: "/instructor.jpg", alt: "Instructor guiding learner" },
+            { src: "/peercollaboration.jpeg", alt: "Peer collaboration" },
+            { src: "/workshopassignment.jpeg", alt: "Workshop assignment" },
+        ]
+    },
+    {
+        title: "People Who Make iCure Happen",
+        images: [
+            { src: "/happen1.jpeg", alt: "Management team" },
+            { src: "/mike.jpg", alt: "Volunteer trainers" },
+            { src: "/happen2.jpg", alt: "Staff meeting" },
+            { src: "/ground.jpg", alt: "Field operators" },
+            { src: "/trainer.jpg", alt: "Partner representatives" },
+            { src: "/trainer2.jpg", alt: "Additional partner" },
+        ]
+    },
+    {
+        title: "Graduates",
+        images: [
+            { src: "/cert4.jpeg", alt: "Proud graduates" },
+            { src: "/cert2.jpeg", alt: "Certification ceremony" },
+            { src: "/cert1.jpeg", alt: "Awarding top student" },
+            { src: "/group1.jpeg", alt: "Celebration moments" },
+            { src: "/group2.jpeg", alt: "Group photo alumni" },
+            { src: "/group3.jpeg", alt: "Alumni networking session" },
+        ]
+    }
 ];
 
+const allImages = galleryCategories.flatMap(category => category.images);
+
+interface HoverState {
+    globalIndex: number;
+}
+
+interface ImageSize {
+    [key: number]: {
+        span: string;
+        height: string;
+    };
+}
+
+// Define the masonry layout pattern - matching Pinterest-style layout
+const imageSizes: ImageSize = {
+    0: { span: "col-span-2 row-span-2", height: "h-[400px]" },
+    1: { span: "col-span-1 row-span-1", height: "h-[190px]" },
+    2: { span: "col-span-1 row-span-2", height: "h-[400px]" },
+    3: { span: "col-span-1 row-span-1", height: "h-[190px]" },
+    4: { span: "col-span-1 row-span-2", height: "h-[400px]" },
+    5: { span: "col-span-1 row-span-1", height: "h-[190px]" },
+    6: { span: "col-span-1 row-span-2", height: "h-[400px]" },
+    7: { span: "col-span-2 row-span-1", height: "h-[190px]" },
+    8: { span: "col-span-1 row-span-1", height: "h-[190px]" },
+    9: { span: "col-span-1 row-span-1", height: "h-[190px]" },
+};
+
 export default function GallerySection() {
-    const [selected, setSelected] = useState<number | null>(null);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [hoverState, setHoverState] = useState<HoverState | null>(null);
+
+    const getGlobalIndex = (catIndex: number, imgIndex: number) => {
+        let count = 0;
+        for (let i = 0; i < catIndex; i++) {
+            count += galleryCategories[i].images.length;
+        }
+        return count + imgIndex;
+    };
+
+    const getCategoryFromGlobalIndex = (globalIdx: number) => {
+        let count = 0;
+        for (let i = 0; i < galleryCategories.length; i++) {
+            if (globalIdx < count + galleryCategories[i].images.length) {
+                return galleryCategories[i].title;
+            }
+            count += galleryCategories[i].images.length;
+        }
+        return "";
+    };
+
+    const handlePrevious = () => {
+        if (selectedIndex !== null) {
+            setSelectedIndex((selectedIndex - 1 + allImages.length) % allImages.length);
+        }
+    };
+
+    const handleNext = () => {
+        if (selectedIndex !== null) {
+            setSelectedIndex((selectedIndex + 1) % allImages.length);
+        }
+    };
 
     return (
         <section id="gallery" className="py-20 bg-gray-50">
-            <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center mb-16"
                 >
                     <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
                         Impact <span className="text-[#E91F31]">Gallery</span>
                     </h1>
-
                     <p className="mt-3 text-gray-600 max-w-xl mx-auto">
-                        Take a look at our facilities, hands-on training sessions,
-                        and proud graduates.
+                        Discover the stories behind our impact—from hands-on skills training and sustainable innovation to the people, partnerships, and graduates transforming communities.
                     </p>
                 </motion.div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
 
-                    {images.map((img, i) => (
-                        <motion.button
-                            key={i}
-                            onClick={() => setSelected(i)}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: i * 0.08 }}
-                            viewport={{ once: true }}
-                            whileHover={{ scale: 1.05 }}
-                            className="group relative aspect-square overflow-hidden rounded-xl border border-gray-200"
+                {/* Categories Sections */}
+                {galleryCategories.map((category, catIdx) => (
+                    <div key={catIdx} className="mb-20">
+                        <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-8">
+                            {category.title}
+                        </h2>
+
+                        {/* Desktop Masonry Grid Layout */}
+                        <div className="hidden md:grid grid-cols-4 auto-rows-[190px] gap-4">
+                            {category.images.map((img, imgIdx) => {
+                                const globalIdx = getGlobalIndex(catIdx, imgIdx);
+                                const isHovered = hoverState?.globalIndex === globalIdx;
+                                const sizeConfig = imageSizes[imgIdx % 10] || { span: "col-span-1 row-span-1", height: "h-[190px]" };
+
+                                return (
+                                    <motion.div
+                                        key={imgIdx}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ delay: (imgIdx % 10) * 0.05, duration: 0.4 }}
+                                        viewport={{ once: true }}
+                                        className={`relative group overflow-hidden border border-gray-200 rounded-lg ${sizeConfig.span}`}
+                                    >
+                                        <button
+                                            onClick={() => setSelectedIndex(globalIdx)}
+                                            onMouseEnter={() =>
+                                                setHoverState({ globalIndex: globalIdx })
+                                            }
+                                            onMouseLeave={() => setHoverState(null)}
+                                            className="relative overflow-hidden cursor-pointer flex items-center justify-center transition-all duration-300 w-full h-full"
+                                        >
+                                            {/* Image */}
+                                            <motion.img
+                                                src={img.src}
+                                                alt={img.alt}
+                                                className="h-full w-full object-cover"
+                                                loading="lazy"
+                                                whileHover={{ scale: 1.1 }}
+                                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                            />
+
+                                            {/* Hover Overlay with Fade */}
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: isHovered ? 1 : 0 }}
+                                                transition={{ duration: 0.3 }}
+                                                className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3"
+                                            >
+                                                {/* Section Title */}
+                                                <h3 className="text-white text-center font-semibold text-sm sm:text-base px-3 line-clamp-2">
+                                                    {category.title}
+                                                </h3>
+
+                                                {/* Plus Sign */}
+                                                <motion.div
+                                                    animate={{ scale: isHovered ? 1 : 0.8 }}
+                                                    transition={{ duration: 0.3 }}
+                                                >
+                                                    <Plus
+                                                        size={40}
+                                                        className="text-white stroke-[1.5]"
+                                                    />
+                                                </motion.div>
+                                            </motion.div>
+                                        </button>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Mobile Flex Column Layout */}
+                        <div className="flex md:hidden flex-col gap-4">
+                            {category.images.map((img, imgIdx) => {
+                                const globalIdx = getGlobalIndex(catIdx, imgIdx);
+                                const isHovered = hoverState?.globalIndex === globalIdx;
+
+                                return (
+                                    <motion.div
+                                        key={imgIdx}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ delay: imgIdx * 0.05, duration: 0.4 }}
+                                        viewport={{ once: true }}
+                                        className="relative group overflow-hidden border border-gray-200 rounded-lg h-64"
+                                    >
+                                        <button
+                                            onClick={() => setSelectedIndex(globalIdx)}
+                                            onMouseEnter={() =>
+                                                setHoverState({ globalIndex: globalIdx })
+                                            }
+                                            onMouseLeave={() => setHoverState(null)}
+                                            className="relative overflow-hidden cursor-pointer flex items-center justify-center transition-all duration-300 w-full h-full"
+                                        >
+                                            {/* Image */}
+                                            <motion.img
+                                                src={img.src}
+                                                alt={img.alt}
+                                                className="h-full w-full object-cover"
+                                                loading="lazy"
+                                                whileHover={{ scale: 1.1 }}
+                                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                            />
+
+                                            {/* Hover Overlay with Fade */}
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: isHovered ? 1 : 0 }}
+                                                transition={{ duration: 0.3 }}
+                                                className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3"
+                                            >
+                                                {/* Section Title */}
+                                                <h3 className="text-white text-center font-semibold text-sm sm:text-base px-3 line-clamp-2">
+                                                    {category.title}
+                                                </h3>
+
+                                                {/* Plus Sign */}
+                                                <motion.div
+                                                    animate={{ scale: isHovered ? 1 : 0.8 }}
+                                                    transition={{ duration: 0.3 }}
+                                                >
+                                                    <Plus
+                                                        size={40}
+                                                        className="text-white stroke-[1.5]"
+                                                    />
+                                                </motion.div>
+                                            </motion.div>
+                                        </button>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Click-to-Expand Lightbox Overlay with Navigation */}
+            <AnimatePresence>
+                {selectedIndex !== null && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedIndex(null)}
+                        className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 sm:p-6 cursor-zoom-out"
+                    >
+                        <div
+                            className="relative max-w-5xl w-full flex items-center justify-center"
+                            onClick={(e) => e.stopPropagation()}
                         >
-                            <img
-                                src={img.src}
-                                alt={img.alt}
-                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                loading="lazy"
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setSelectedIndex(null)}
+                                className="absolute -top-12 right-0 md:top-4 md:right-4 z-50 text-white bg-black/60 p-2 rounded-full hover:bg-black transition cursor-pointer"
+                            >
+                                <X size={24} />
+                            </button>
+
+                            {/* Previous Button */}
+                            <button
+                                onClick={handlePrevious}
+                                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-50 text-white bg-black/60 p-2 sm:p-3 rounded-full hover:bg-black transition cursor-pointer"
+                                aria-label="Previous image"
+                            >
+                                <ChevronLeft size={28} />
+                            </button>
+
+                            {/* Image */}
+                            <motion.img
+                                key={selectedIndex}
+                                initial={{ scale: 0.95, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.95, opacity: 0 }}
+                                transition={{ ease: "easeOut", duration: 0.3 }}
+                                src={allImages[selectedIndex].src}
+                                alt={allImages[selectedIndex].alt}
+                                className="max-w-full h-auto max-h-[85vh] object-contain shadow-2xl rounded-lg"
                             />
 
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span className="text-lg font-medium text-white">
-                                    {img.caption}
-                                </span>
+                            {/* Next Button */}
+                            <button
+                                onClick={handleNext}
+                                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 text-white bg-black/60 p-2 sm:p-3 rounded-full hover:bg-black transition cursor-pointer"
+                                aria-label="Next image"
+                            >
+                                <ChevronRight size={28} />
+                            </button>
+
+                            {/* Image Counter */}
+                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-full text-sm">
+                                {selectedIndex + 1} / {allImages.length}
                             </div>
-                        </motion.button>
-                    ))}
-
-                </div>
-            </div>
-            {selected !== null && (
-                <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-6">
-
-                    <div className="relative max-w-3xl w-full">
-
-                        <button
-                            onClick={() => setSelected(null)}
-                            className="absolute top-6 right-3 z-50 text-white bg-black/60 p-2 rounded-full hover:bg-black transition"
-                        >
-                            <X size={20} />
-                        </button>
-
-                        <img
-                            src={images[selected].src}
-                            alt={images[selected].alt}
-                            className="w-full rounded-lg"
-                        />
-                    </div>
-                </div>
-            )}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }
