@@ -11,7 +11,7 @@ const galleryCategories = [
             { src: "/outreach3.jpeg", alt: "Support distributions" },
             { src: "/outreach4.jpeg", alt: "Awareness drive" },
             { src: "/outreach5.jpeg", alt: "Local leaders partnership" },
-            { src: "/outreach-6.jpeg", alt: "Mobilization event" },
+            // { src: "/outreach-6.jpeg", alt: "Mobilization event" },
         ]
     },
     {
@@ -33,7 +33,7 @@ const galleryCategories = [
             { src: "/happen2.jpg", alt: "Icure Family" },
             { src: "/ground.jpg", alt: "Field operators" },
             { src: "/trainer.jpg", alt: "Trainer" },
-            { src: "/trainer2.jpg", alt: "Additional partner" },
+            // { src: "/trainer2.jpg", alt: "Additional partner" },
         ]
     },
     {
@@ -44,7 +44,7 @@ const galleryCategories = [
             { src: "/cert1.jpeg", alt: "Awarding top student" },
             { src: "/group1.jpeg", alt: "Celebration moments" },
             { src: "/group2.jpeg", alt: "Group photo alumni" },
-            { src: "/group3.jpeg", alt: "Alumni networking session" },
+            // { src: "/group3.jpeg", alt: "Alumni networking session" },
         ]
     }
 ];
@@ -62,7 +62,6 @@ interface ImageSize {
     };
 }
 
-// Define the masonry layout pattern - matching Pinterest-style layout
 const imageSizes: ImageSize = {
     0: { span: "col-span-2 row-span-2", height: "h-[400px]" },
     1: { span: "col-span-1 row-span-1", height: "h-[190px]" },
@@ -115,7 +114,6 @@ export default function GallerySection() {
         <section id="gallery" className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -127,18 +125,16 @@ export default function GallerySection() {
                         Impact <span className="text-[#E91F31]">Gallery</span>
                     </h1>
                     <p className="mt-3 text-gray-600 max-w-xl mx-auto">
-                        Discover the stories behind our impact—from hands-on skills training and sustainable innovation to the people, partnerships, and graduates transforming communities.
+                        Discover the stories behind our impact from hands-on skills training and sustainable innovation to the people, partnerships, and graduates transforming communities.
                     </p>
                 </motion.div>
 
-                {/* Categories Sections */}
                 {galleryCategories.map((category, catIdx) => (
                     <div key={catIdx} className="mb-20">
                         <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-8">
                             {category.title}
                         </h2>
 
-                        {/* Desktop Masonry Grid Layout */}
                         <div className="hidden md:grid grid-cols-4 auto-rows-[190px] gap-4">
                             {category.images.map((img, imgIdx) => {
                                 const globalIdx = getGlobalIndex(catIdx, imgIdx);
@@ -162,7 +158,6 @@ export default function GallerySection() {
                                             onMouseLeave={() => setHoverState(null)}
                                             className="relative overflow-hidden cursor-pointer flex items-center justify-center transition-all duration-300 w-full h-full"
                                         >
-                                            {/* Image */}
                                             <motion.img
                                                 src={img.src}
                                                 alt={img.alt}
@@ -172,19 +167,16 @@ export default function GallerySection() {
                                                 transition={{ duration: 0.4, ease: "easeOut" }}
                                             />
 
-                                            {/* Hover Overlay with Fade */}
                                             <motion.div
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: isHovered ? 1 : 0 }}
                                                 transition={{ duration: 0.3 }}
                                                 className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3"
                                             >
-                                                {/* Image Description */}
                                                 <h3 className="text-white text-center font-semibold text-sm sm:text-base px-3 line-clamp-2">
                                                     {img.alt}
                                                 </h3>
 
-                                                {/* Plus Sign */}
                                                 <motion.div
                                                     animate={{ scale: isHovered ? 1 : 0.8 }}
                                                     transition={{ duration: 0.3 }}
@@ -201,7 +193,6 @@ export default function GallerySection() {
                             })}
                         </div>
 
-                        {/* Mobile Flex Column Layout */}
                         <div className="flex md:hidden flex-col gap-4">
                             {category.images.map((img, imgIdx) => {
                                 const globalIdx = getGlobalIndex(catIdx, imgIdx);
@@ -224,7 +215,6 @@ export default function GallerySection() {
                                             onMouseLeave={() => setHoverState(null)}
                                             className="relative overflow-hidden cursor-pointer flex items-center justify-center transition-all duration-300 w-full h-full"
                                         >
-                                            {/* Image */}
                                             <motion.img
                                                 src={img.src}
                                                 alt={img.alt}
@@ -234,19 +224,16 @@ export default function GallerySection() {
                                                 transition={{ duration: 0.4, ease: "easeOut" }}
                                             />
 
-                                            {/* Hover Overlay with Fade */}
                                             <motion.div
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: isHovered ? 1 : 0 }}
                                                 transition={{ duration: 0.3 }}
                                                 className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3"
                                             >
-                                                {/* Image Description */}
                                                 <h3 className="text-white text-center font-semibold text-sm sm:text-base px-3 line-clamp-2">
                                                     {img.alt}
                                                 </h3>
 
-                                                {/* Plus Sign */}
                                                 <motion.div
                                                     animate={{ scale: isHovered ? 1 : 0.8 }}
                                                     transition={{ duration: 0.3 }}
@@ -266,7 +253,6 @@ export default function GallerySection() {
                 ))}
             </div>
 
-            {/* Click-to-Expand Lightbox Overlay with Navigation */}
             <AnimatePresence>
                 {selectedIndex !== null && (
                     <motion.div
@@ -280,7 +266,6 @@ export default function GallerySection() {
                             className="relative max-w-5xl w-full flex items-center justify-center"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            {/* Close Button */}
                             <button
                                 onClick={() => setSelectedIndex(null)}
                                 className="absolute -top-12 right-0 md:top-4 md:right-4 z-50 text-white bg-black/60 p-2 rounded-full hover:bg-black transition cursor-pointer"
@@ -288,7 +273,6 @@ export default function GallerySection() {
                                 <X size={24} />
                             </button>
 
-                            {/* Previous Button */}
                             <button
                                 onClick={handlePrevious}
                                 className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-50 text-white bg-black/60 p-2 sm:p-3 rounded-full hover:bg-black transition cursor-pointer"
@@ -297,7 +281,6 @@ export default function GallerySection() {
                                 <ChevronLeft size={28} />
                             </button>
 
-                            {/* Image */}
                             <motion.img
                                 key={selectedIndex}
                                 initial={{ scale: 0.95, opacity: 0 }}
@@ -309,7 +292,6 @@ export default function GallerySection() {
                                 className="max-w-full h-auto max-h-[85vh] object-contain shadow-2xl rounded-lg"
                             />
 
-                            {/* Next Button */}
                             <button
                                 onClick={handleNext}
                                 className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 text-white bg-black/60 p-2 sm:p-3 rounded-full hover:bg-black transition cursor-pointer"
@@ -318,7 +300,6 @@ export default function GallerySection() {
                                 <ChevronRight size={28} />
                             </button>
 
-                            {/* Image Counter */}
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-full text-sm">
                                 {selectedIndex + 1} / {allImages.length}
                             </div>

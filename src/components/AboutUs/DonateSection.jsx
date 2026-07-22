@@ -6,7 +6,7 @@ export default function DonateSection() {
     return (
     <section id="donate" className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-            <img src="/training-img.jpg" alt="" className="h-full w-full object-cover" aria-hidden="true" />
+            <img src="/Donate.jpeg" alt="" className="h-full w-full object-cover" aria-hidden="true" />
             <div className="absolute inset-0 bg-black/70" />
         </div>
 
@@ -32,7 +32,7 @@ export default function DonateSection() {
                     Make a <span className="text-[#E91F31]">Donation</span>
                 </h2>
                 <p className="mt-4 mx-auto max-w-2xl text-gray-300 text-sm md:text-base leading-relaxed">
-                    Choose how you want to make an impact — sponsor a student, support sustainability, or equip our training workshop.
+                    Choose how you want to make an impact sponsor a student, support sustainability, or equip our training workshop.
                 </p>
             </motion.div>
 

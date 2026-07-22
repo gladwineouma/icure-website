@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
           Why <span className="text-[#E91F31]">Choose</span> Us
         </h1>
         <p className="text-center text-gray-600 text-base md:text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
-          We're not just a school — we're a launchpad for your tech career.
+          We're not just a school we're a launchpad for your tech career.
           Here's what sets iCure apart from the rest.
         </p>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
