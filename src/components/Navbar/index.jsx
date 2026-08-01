@@ -6,12 +6,15 @@ export default function Navbar() {
   const location = useLocation();
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
+    // 1. Updated path mapping to track your new outreach page
     const pathToSection = {
       "/": "home",
       "/about": "about",
       "/courses": "courses",
       "/gallery": "gallery",
+      "/outreach": "outreach", // Added outreach route link
       "/faqs": "faqs",
       "/contactus": "contactus",
     };
@@ -19,6 +22,7 @@ export default function Navbar() {
     const currentSection = pathToSection[location.pathname] || "home";
     setActive(currentSection);
   }, [location.pathname]);
+
   useEffect(() => {
     if (location.pathname !== "/") return;
 
@@ -73,6 +77,8 @@ export default function Navbar() {
             </span>
           </div>
         </div>
+
+        {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8 text-[15px] font-medium">
           <li className={linkClass("home")}>
             <Link to="/">Home</Link>
@@ -90,6 +96,11 @@ export default function Navbar() {
             <Link to="/gallery">Gallery</Link>
           </li>
 
+          {/* 2. Added desktop Outreach link */}
+          <li className={linkClass("outreach")}>
+            <Link to="/outreach">Outreach</Link>
+          </li>
+
           <li className={linkClass("faqs")}>
             <Link to="/faqs">FAQs</Link>
           </li>
@@ -98,6 +109,7 @@ export default function Navbar() {
             <Link to="/contactus">Contact Us</Link>
           </li>
         </ul>
+
         <Link
           to="/about#donate"
           className="hidden md:block bg-[#E91F31] text-white font-semibold px-5 py-2 rounded-md hover:bg-red-700 transition"
@@ -107,10 +119,13 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden"
+          aria-label="Toggle Menu"
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
+
+      {/* Mobile Links */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-lg border-t">
           <ul className="flex flex-col items-center gap-6 py-8 text-[16px] font-medium">
@@ -154,6 +169,17 @@ export default function Navbar() {
               </Link>
             </li>
 
+            {/* 3. Added mobile Outreach link */}
+            <li className={linkClass("outreach")}>
+              <Link
+                to="/outreach"
+                onClick={() => setMenuOpen(false)}
+                className="block w-full text-center"
+              >
+                Outreach
+              </Link>
+            </li>
+
             <li className={linkClass("faqs")}>
               <Link
                 to="/faqs"
@@ -173,16 +199,15 @@ export default function Navbar() {
                 Contact Us
               </Link>
             </li>
+
             <li>
-              <li>
-                <Link
-                  to="/about#donate"
-                  onClick={() => setMenuOpen(false)}
-                  className="block w-full bg-[#E91F31] text-white font-semibold px-6 py-3 rounded-md hover:bg-red-600 transition text-center"
-                >
-                  Donate
-                </Link>
-              </li>
+              <Link
+                to="/about#donate"
+                onClick={() => setMenuOpen(false)}
+                className="block w-full bg-[#E91F31] text-white font-semibold px-6 py-3 rounded-md hover:bg-red-600 transition text-center"
+              >
+                Donate
+              </Link>
             </li>
           </ul>
         </div>
