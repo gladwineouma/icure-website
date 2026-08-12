@@ -30,15 +30,13 @@ export function HeroBanner() {
             className="mb-16"
           >
             <span className="inline-block rounded-full mt-4 border border-[#E91F31]/40 bg-[#E91F31]/10 px-4 py-1.5 text-xs font-semibold text-[#E91F31] mb-4 backdrop-blur-sm">
-              Community Based Organisation
+              CBO • NITA-Certified Vocational Training Centre
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white tracking-tight">
               Empowering <span className="text-[#E91F31]">Less Fortunate Youth</span>
             </h1>
             <p className="mt-4 mx-auto max-w-2xl text-gray-300 text-sm md:text-base leading-relaxed">
-              iCure Mentorship and Empowerment Training Centre is a registered Community Based Organisation
-              dedicated to transforming the lives of underprivileged youth through skills training, mentorship,
-              and empowerment in electronics repair and technology.
+              iCure Mentorship and Empowerment Training Centre is a registered Community Based Organisation and NITA-certified vocational training centre empowering underprivileged youth through practical skills, mentorship, and technology.
             </p>
           </motion.div>
         </ScrollReveal>

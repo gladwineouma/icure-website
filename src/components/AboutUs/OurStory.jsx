@@ -24,17 +24,30 @@ export function OurStory() {
             <div>
               <div className="mt-6 space-y-4 text-gray-600 leading-relaxed text-sm md:text-base">
                 <p>
-                  We believe every young person deserves a chance to succeed. Many youth in our community face
-                  economic hardships that deny them access to quality education and employment opportunities.
+                  We believe every young person deserves an opportunity to learn, grow, and build a sustainable
+                  future. Many young people in our communities face economic challenges that limit their access
+                  to quality education, technical training, and employment opportunities.
                 </p>
+
                 <p>
-                  iCure was founded to bridge this gap — providing free and subsidised hands-on training in
-                  phone and laptop repair, equipping young people with marketable skills that lead to
-                  self-employment and financial independence.
+                  iCure was founded to bridge this gap by providing free and subsidised hands-on training in
+                  mobile phone and laptop repair, equipping young people with practical, marketable skills that
+                  can create pathways to employment, self-employment, and financial independence.
                 </p>
+
                 <p>
-                  Our programmes focus on practical, industry‑relevant skills combined with mentorship,
-                  life skills, and entrepreneurship training to create well‑rounded, empowered individuals.
+                  Today, iCure is a registered Community Based Organisation and a
+                  <span className="font-semibold text-gray-800">
+                    {" "}NITA-certified vocational training centre
+                  </span>
+                  , strengthening our commitment to providing structured, practical, and industry-relevant
+                  technical training.
+                </p>
+
+                <p>
+                  Our programmes go beyond technical skills, combining hands-on training with mentorship,
+                  life skills, entrepreneurship, and environmental awareness to help young people become
+                  confident, capable, and self-reliant.
                 </p>
               </div>
             </div>

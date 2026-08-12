@@ -11,7 +11,17 @@ const galleryCategories = [
             { src: "/outreach3.jpeg", alt: "Support distributions" },
             { src: "/outreach4.jpeg", alt: "Awareness drive" },
             { src: "/outreach5.jpeg", alt: "Local leaders partnership" },
-            // { src: "/outreach-6.jpeg", alt: "Mobilization event" },
+            { src: "/4.jpg", alt: "Volunteer Teaching" },
+            { src: "/6.jpg", alt: "" },
+            { src: "/7.jpg", alt: "" },
+            { src: "/8.jpg", alt: "" },
+            { src: "/9.jpg", alt: "" },
+            { src: "/10.jpg", alt: "" },
+            { src: "/11.jpg", alt: "" },
+            { src: "/chuka1 (1).JPG", alt: "" },
+            { src: "/chuka1 (3).JPG", alt: "" },
+
+
         ]
     },
     {
@@ -33,6 +43,14 @@ const galleryCategories = [
             { src: "/happen2.jpg", alt: "Icure Family" },
             { src: "/ground.jpg", alt: "Field operators" },
             { src: "/trainer.jpg", alt: "Trainer" },
+            { src: "/1.jpeg", alt: "" },
+            { src: "/2.jpeg", alt: "" },
+           
+            
+
+
+
+
             // { src: "/trainer2.jpg", alt: "Additional partner" },
         ]
     },

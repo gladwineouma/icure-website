@@ -4,41 +4,40 @@ export const rawStories = [
         location: "Chuka University",
         date: "March 14, 2026",
         dateString: "2026-03-14",
-        image: "/gallery-8.jpg",
-        excerpt: "Our team visited Chuka University to inspire over 150 students by demystifying technology through live mobile repair and diagnostic demonstrations.",
+        image: "/chuka1 (2).JPG",
+        excerpt: "Our team engaged over 150 students at Chuka University through live mobile repair demonstrations, practical diagnostics, and conversations around technology and hands-on skills.",
         body: [
-            "Our team spent an incredible morning with over 150 bright students at Chuka University. The goal was simple: demystify technology and show these young minds that fixing things is just as creative as building them.",
-            "We set up a fully functional mobile repair bench right in the main assembly hall. The students watched in awe during live diagnostics and screen replacement demonstrations. A few volunteers even tried their hand at basic safe diagnostics.",
-            "The curiosity was off the charts. We left inspired, having gifted the school's tech club a beginner tool kit to keep their curiosity buzzing."
+            "Our team visited Chuka University for an engaging session with over 150 students, focused on making technology more accessible and demonstrating the practical opportunities that come with learning technical skills.",
+            "We set up a mobile repair workstation in the main assembly hall and demonstrated real-world repair processes, including device diagnostics and screen replacement. The session gave students a closer look at what happens behind the technology they use every day and showed how technical skills can be developed through hands-on practice.",
+            "The session sparked curiosity and meaningful conversations around electronics, repair, and technology as a practical career path. We also donated a beginner tool kit to the university's tech club to encourage students to continue exploring and developing their technical skills."
         ],
     },
     {
-        title: "E-Waste Collection Drive",
-        location: "Community Hall — Nairobi",
+        title: "E-Waste Drive",
+        location: "Dr Thuo E-Waste — Naivasha",
         date: "May 09, 2026",
         dateString: "2026-05-09",
-        image: "/gallery-15.jpg",
-        excerpt: "Residents dropped off old phones, laptops, and accessories. We salvaged usable parts for training and safely disposed of the rest.",
+        image: "/10.jpg",
+        excerpt: "An educational visit exploring e-waste recycling and collecting refurbished equipment to support practical training at our centre.",
         body: [
-            "In partnership with local environmental youth groups, we hosted our quarterly E-Waste Collection Drive at the Kilimani Community Hall.",
-            "The response from residents was overwhelming. Over the course of a single Saturday, we collected more than 240 legacy devices, including old smartphones, laptops, and desktop towers.",
-            "Our training team sorted through every single item. We successfully harvested dozens of functioning components—screens, batteries, RAM sticks, and charging ports—which will now serve as vital practice materials for our youth students."
+            "In partnership with local environmental youth groups, we visited Dr Thuo E-Waste in Naivasha to learn more about e-waste management, recycling, and how discarded electronic materials can be given a second life.",
+            "During the visit, we explored how e-waste can be transformed into useful products such as doors, windows, and storage solutions, giving us a deeper understanding of the value that can be created from materials that would otherwise be discarded.",
+            "We also collected refurbished electronic devices and equipment that were taken back to our training centre to support students during practical sessions and hands-on technical training."
         ],
     },
     {
         title: "Volunteer Teaching Session",
-        location: "Kawangware Youth Centre",
+        location: "St Charles Lwanga Vocational Training Centre — Kibera, Nairobi",
         date: "June 22, 2026",
         dateString: "2026-06-22",
-        image: "/gallery-11.jpg",
-        excerpt: "A hands-on afternoon teaching youths the basics of electronics, safe tool handling, and simple repairs.",
+        image: "/4.jpg",
+        excerpt: "A hands-on session introducing young people to electronics, safe tool handling, and practical repair skills.",
         body: [
-            "We took our tools and passion to the Kawangware Youth Centre for an intensive, practical workshop designed to spark vocational interest in electronics.",
-            "Working in small groups, the youths were introduced to multi-meters, thermal cameras, and standard repair toolsets. Instead of just lecturing, we let them handle mock boards.",
-            "Seeing that lightbulb moment when a student successfully tracked down a power failure reminds us why these community outreach sessions matter so much."
+            "We visited St Charles Lwanga Vocational Training Centre in Kibera, Nairobi, for an intensive practical session focused on introducing young people to electronics and basic repair skills.",
+            "Working closely with the trainees, we introduced them to multimeters, standard repair tools, and safe handling techniques. Rather than focusing only on theory, we encouraged them to work with the tools and practice basic diagnostics on electronic boards.",
+            "The session was an opportunity to share practical knowledge, encourage vocational skills development, and inspire young people to explore electronics repair as a valuable and sustainable skill."
         ],
     },
-    // Add this block at the very end of your array to test:
     // {
     //     title: "TEST: This Should Appear First!",
     //     location: "Test Location Hub",
