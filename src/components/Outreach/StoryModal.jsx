@@ -8,7 +8,6 @@ export default function StoryModal({ activeStory, onClose }) {
     return (
         <AnimatePresence>
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                {/* Backdrop overlay background shadow click catcher */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -17,7 +16,6 @@ export default function StoryModal({ activeStory, onClose }) {
                     className="absolute inset-0 bg-black/60 backdrop-blur-sm"
                 />
 
-                {/* Modal Window Container Content Card */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95, y: 10 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
